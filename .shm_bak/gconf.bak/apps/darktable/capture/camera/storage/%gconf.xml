@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="namepattern" mtime="1313062370" type="string">
+		<stringvalue>$(YEAR)$(MONTH)$(DAY)_$(SEQUENCE).$(FILE_EXTENSION)</stringvalue>
+	</entry>
+	<entry name="subpath" mtime="1313062370" type="string">
+		<stringvalue>$(YEAR)$(MONTH)$(DAY)_$(JOBCODE)</stringvalue>
+	</entry>
+	<entry name="basedirectory" mtime="1313062370" type="string">
+		<stringvalue>$(PICTURES_FOLDER)/Darktable</stringvalue>
+	</entry>
+</gconf>

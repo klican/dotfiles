@@ -1,0 +1,90 @@
+!URxvt*font:                     xft:terminus:size=12
+Rxvt.font: xft:Envy Code R:style=Regular:size=10:antialias=true
+URxvt*jumpScroll:               True
+URxvt*depth:                    32
+URxvt*transparent:              True
+URxvt*cursorColor:              grey
+URxvt*loginShell:               False
+URxvt*visualBell:               False
+URxvt*scrollBar:                False
+URxvt*scrollTtyOutput:          False
+URxvt*scrollTtyKeypress:        True
+URxvt*scrollWithBuffer:         True
+URxvt*cursorBlink:              False
+URxvt*saveLines:                1000
+URxvt*internalBorder:           0
+URxvt*borderLess:               False
+URxvt*termName:                 rxvt
+URxvt*fading:                   0
+URxvt*shading:                  100
+URxvt*perl-ext:                 matcher
+URxvt*urlLauncher:              firefox
+URxvt*background:               rgba:0000/0000/0000/aaaa
+! urxvt-keyboard-select
+URxvt.perl-ext-common:  default,keyboard-select
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.M-s:       perl:keyboard-select:search
+
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
+
+!URxvt*foreground:    green
+!URxvt*cursorColor:   #59B52B
+URxvt*colorBD:          #EEEEEF
+! Blue
+!URxvt*color4:           #3863ba
+!URxvt*color12:          #4F6FAE
+
+!!!zenburn!!!
+!URxvt*background: #3f3f3f
+!URxvt*foreground: #dcdccc
+URxvt*foreground: #E6E6E6
+URxvt*cursorColor: #aaaaaa
+URxvt*colorUL: #366060
+URxvt*underlineColor: #dfaf8f
+URxvt*color0: #3f3f3f
+URxvt*color1: #cc9393
+URxvt*color2: #7f9f7f
+URxvt*color3: #d0bf8f
+URxvt*color4: #6ca0a3
+URxvt*color5: #dc8cc3
+URxvt*color6: #93e0e3
+URxvt*color7: #dcdccc
+URxvt*color8: #000000
+URxvt*color9: #dca3a3
+URxvt*color10: #bfebbf
+URxvt*color11: #f0dfaf
+URxvt*color12: #8cd0d3
+URxvt*color13: #dc8cc3
+URxvt*color14: #93e0e3
+URxvt*color15: #ffffff
+!!!zenburn!!!
+
+/* 
+ *      xft config
+ * */
+!Xft*dpi: 125
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.antialias: 1
+Emacs.font: Envy Code R-10

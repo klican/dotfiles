@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="import_last_directory" mtime="1313062523" type="string">
+		<stringvalue>/home/lelio/fotky</stringvalue>
+	</entry>
+	<entry name="import_ignore_jpegs" mtime="1313062523" type="bool" value="false"/>
+	<entry name="import_recursive" mtime="1313062523" type="bool" value="true"/>
+	<entry name="expander_snapshots" mtime="1313063095" type="int" value="-1"/>
+	<entry name="expander_import" mtime="1313063095" type="int" value="18"/>
+	<entry name="initial_rating" mtime="1313062370" type="int" value="2"/>
+	<entry name="combo_filter" mtime="1313062967" type="int" value="0"/>
+	<entry name="combo_sort" mtime="1313062963" type="int" value="1"/>
+	<entry name="expander_history" mtime="1313063095" type="int" value="-1"/>
+	<entry name="expander_histogram" mtime="1313063095" type="int" value="-1"/>
+	<entry name="expander_navigation" mtime="1313063095" type="int" value="-1"/>
+	<entry name="expander_metadata" mtime="1313063095" type="int" value="2"/>
+	<entry name="expander_library" mtime="1313062370" type="int" value="2"/>
+	<entry name="panel_bottom" mtime="1313063095" type="int" value="2"/>
+	<entry name="panel_top" mtime="1313063095" type="int" value="2"/>
+	<entry name="panel_right" mtime="1313063095" type="int" value="-1"/>
+	<entry name="panel_left" mtime="1313063095" type="int" value="-1"/>
+	<entry name="window_h" mtime="1313063095" type="int" value="752"/>
+	<entry name="window_w" mtime="1313063095" type="int" value="1364"/>
+	<entry name="window_y" mtime="1313063095" type="int" value="14"/>
+	<entry name="window_x" mtime="1313063095" type="int" value="0"/>
+	<entry name="fullscreen" mtime="1313062370" type="bool" value="false"/>
+	<entry name="view" mtime="1313063095" type="int" value="4"/>
+</gconf>

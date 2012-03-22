@@ -1,0 +1,124 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
+"if has('gui_running')
+"    set background=light
+"else
+"    set background=dark
+"endif
+colorscheme wombat
+
+filetype plugin on
+au FileType * exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/".expand('<amatch>'))
+set complete+=k
+"previous is for completion on hitting the Tab in .tex files. It works with the
+"Supertab plugin and a dictionary file.
+filetype plugin indent on "Turn on file type detection
+set nocp
+set t_Co=256
+syntax enable
+autocmd Filetype tex setlocal nofoldenable
+"colorscheme wombat
+set nocompatible
+set hidden "Handle multiple buffers better
+set linebreak
+set ruler "Show cursor position
+set number "Show line numbers
+set ignorecase "Ignore case when searching
+set smartcase  "but case-sensitive if expression contais a capital letter
+
+"This jumps to the middle of the actual line
+map gm :call cursor(0, virtcol('$')/2)<CR>
+"set hlsearch "Highlight search things
+set backspace=indent,eol,start "bez tohto bs maže znaky iba z aktuálne napísaného textu
+"set incsearch "Highlight searched string as it's typed 
+set scrolloff=2
+"nmap <silent> <C-n> <Esc>:call ToggleHLSearch()<CR> 
+"Hovewer don't know exactly what previous line does :)
+
+set wildmenu "Enhanced command line completion
+set wildmode=list:longest "Complete files like a shell
+
+set mouse=a	   "Enable the use of the mouse
+set showcmd 	   
+"zobrazuje priebezne zadavany prikaz (prinosne hl. pri viacznakovych prikazoch ako napr qg})
+set grepprg=grep\ -nH\ $* "vim-latex post-install recommendation
+let g:tex_flavor = "latex" "vim-latex post-install recommendation
+
+
+"set showmatch 	"zapíšete-li pravou závorku, ukáže vám k ní příslušející levou (krátce na ni poskočí kurzorem a zase se vrátí); hodně užitečné třeba pro TeXovské texty, které se hemží závorkami
+set textwidth=80 "Zadáte-li nenulovou hodnotu, bude Vim „hlídat“ pravý okraj a kdykoli dojde k jeho překročení, přesune při psaní aktuální slovo na začátek nového řádku.
+ 
+" Smart mappings on the command line
+cno $h e ~/
+cno $d e ~/Desktop/
+cno $j e ./
+cno $c e <C-\>eCurrentFileDir("e")<cr>
+" $q is super useful when browsing on the command line
+cno $q <C-\>eDeleteTillSlash()<cr>
+
+set spelllang=sk
+"set spell
+"Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+function NERDTreeToggle()
+  execute ":NERDTreeToggle"
+endfunction
+command -nargs=0 NERDTreeToggle :call NERDTreeToggle()
+
+nmap \nt :NERDTreeToggle<CR>
+
+function NERDTreeClose()
+  execute ":NERDTreeClose"
+endfunction
+command -nargs=0 NERDTreeClose :call NERDTreeClose()
+
+nmap \ntc :NERDTreeClose<CR>
+
+inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+" Use ranger as vim file manager:
+"When <leader>r is pressed, ranger is launched with RANGER_RETURN_FILE
+"environment variable set to a temporary file name. After ranger quits, the
+"selected filename is read from the temporary file, and vim opens it.
+
+function! Ranger()
+    " Get a temp file name without creating it
+    let tmpfile = substitute(system('mktemp -u'), '\n', '', '')
+    " Launch ranger, passing it the temp file name
+    silent exec '!RANGER_RETURN_FILE='.tmpfile.' ranger'
+    " If the temp file has been written by ranger
+    if filereadable(tmpfile)
+        " Get the selected file name from the temp file
+        let filetoedit = system('cat '.tmpfile)
+        exec 'edit '.filetoedit
+        call delete(tmpfile)
+    endif
+    redraw!
+endfunction
+
+nmap <leader>r :call Ranger()<cr>

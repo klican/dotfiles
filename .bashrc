@@ -1,0 +1,1 @@
+/home/lelio/.bash.d/bashrc

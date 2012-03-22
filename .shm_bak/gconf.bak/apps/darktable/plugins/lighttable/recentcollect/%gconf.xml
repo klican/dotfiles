@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="line5" mtime="1313062937" type="string">
+		<stringvalue>0:</stringvalue>
+	</entry>
+	<entry name="line4" mtime="1313062937" type="string">
+		<stringvalue>1:0:0:/home/lelio/fotky/2011$</stringvalue>
+	</entry>
+	<entry name="line3" mtime="1313062937" type="string">
+		<stringvalue>1:0:1:Panasonic DMC-FZ50$</stringvalue>
+	</entry>
+	<entry name="line2" mtime="1313062937" type="string">
+		<stringvalue>1:0:3:2011:01:12 21:12:01$</stringvalue>
+	</entry>
+	<entry name="line1" mtime="1313062937" type="string">
+		<stringvalue>1:0:0:/home/lelio/fotky/2011/03/15$</stringvalue>
+	</entry>
+	<entry name="line0" mtime="1313062967" type="string">
+		<stringvalue>1:0:0:/home/lelio/fotky/2011/02/06$</stringvalue>
+	</entry>
+	<entry name="num_items" mtime="1313062937" type="int" value="6"/>
+</gconf>

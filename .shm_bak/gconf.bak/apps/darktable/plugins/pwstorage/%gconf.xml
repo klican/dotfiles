@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="pwstorage_backend" mtime="1313062370" type="int" value="0"/>
+</gconf>

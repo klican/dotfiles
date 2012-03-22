@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="background_color" mtime="1312277368" type="string">
+		<stringvalue>#444</stringvalue>
+	</entry>
+	<entry name="photo_thumbnail_scale" mtime="1312278081" type="int" value="128"/>
+	<entry name="show_welcome_dialog" mtime="1312277302" type="bool" value="false"/>
+	<entry name="events_sort_ascending" mtime="1312277302" type="bool" value="false"/>
+	<entry name="display_basic_properties" mtime="1312277302" type="bool" value="true"/>
+</gconf>

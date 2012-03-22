@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="pane_position" mtime="1312278081" type="int" value="221"/>
+	<entry name="library_height" mtime="1312278081" type="int" value="752"/>
+	<entry name="library_width" mtime="1312278081" type="int" value="1364"/>
+	<entry name="library_maximize" mtime="1312278081" type="bool" value="false"/>
+</gconf>

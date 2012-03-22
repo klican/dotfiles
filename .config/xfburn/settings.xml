@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xfburn-settings>
+	<setting name="fifo-size" type="int" value="4096"/>
+	<setting name="show-empty-speed-list-notice" type="boolean" value="true"/>
+	<setting name="human-readable-units" type="boolean" value="true"/>
+	<setting name="main-window-height" type="int" value="752"/>
+	<setting name="main-window-width" type="int" value="681"/>
+	<setting name="temporary-dir" type="string" value="/tmp"/>
+	<setting name="vpaned-position" type="int" value="211"/>
+	<setting name="show-hidden-files" type="boolean" value="false"/>
+	<setting name="clean-temporary-dir" type="boolean" value="true"/>
+	<setting name="hpaned-position" type="int" value="250"/>
+</xfburn-settings>

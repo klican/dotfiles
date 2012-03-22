@@ -1,0 +1,149 @@
+;;-- el-get, -the Emacs pacgage manager initialization
+(add-to-list 'load-path "~/.emacs.d/goodies/")
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil t)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (end-of-buffer)
+    (eval-print-last-sexp)))
+
+(el-get 'sync)
+
+;;-- Evil, -the Emacs's Vim emulator configuration
+(require 'undo-tree)
+(require 'evil-numbers)
+(evil-mode 1)
+(setq evil-default-cursor t)
+(require 'surround)
+(global-surround-mode 1)
+(require 'evil-numbers)
+(setq evil-leader/leader ","
+      evil-leader/i-all-states t)
+(require 'evil-leader)
+(evil-leader/set-key
+  "s" 'color-theme-solarized-dark) ;testovanie
+(require 'evil)
+;;-- Evil, -the Emacs's Vim emulator configuration
+;Org-mode configure
+(evil-declare-key 'normal org-mode-map
+  (kbd "RET") 'org-open-at-point
+  "za" 'org-cycle
+  "zA" 'org-shifttab
+  "zm" 'hide-body
+  "zr" 'show-all
+  "zo" 'show-subtree
+  "zO" 'show-all
+  "zc" 'hide-subtree
+  "zC" 'hide-all
+  (kbd "M-j") 'org-shiftleft
+  (kbd "M-k") 'org-shiftright
+  (kbd "M-H") 'org-metaleft
+  (kbd "M-J") 'org-metadown
+  (kbd "M-K") 'org-metaup
+  (kbd "M-L") 'org-metaright
+  (kbd "SPC") 'ace-jump-mode)
+
+(evil-declare-key 'insert org-mode-map
+  (kbd "M-j") 'org-shiftleft
+  (kbd "M-k") 'org-shiftright
+  (kbd "M-H") 'org-metaleft
+  (kbd "M-J") 'org-metadown
+  (kbd "M-K") 'org-metaup
+  (kbd "M-L") 'org-metaright)
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((gnuplot . t)))
+;; add additional languages with '((language . t)))
+
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cc" 'org-capture)
+
+;-- LaTeX config begin
+(require 'auto-complete-yasnippet)
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-math-mode 'TeX-PDF-mode)
+;(add-hook 'LaTeX-mode-hook 'TeX-fold-mode)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq TeX-electric-sub-and-superscript 1)
+(setq preview-scale-function 1)
+;(setq-default TeX-master nil) ; make auctex aware of multi-file structured documents
+
+
+(require 'reftex)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
+(add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
+
+
+;; Use hunspell instead of ispell
+(setq ispell-program-name "aspell") 
+;(require 'rw-language-and-country-codes)
+;(require 'rw-ispell)
+;(require 'rw-hunspell)
+;(rw-hunspell-setup)
+;(setq ispell-dictionary "sk_SK_hunspell")
+;;; The following is set via custom
+;(custom-set-variables
+; '(rw-hunspell-default-dictionary "sk_SK_hunspell")
+; '(rw-hunspell-dicpath-list (quote ("/usr/share/hunspell")))
+; '(rw-hunspell-make-dictionary-menu t)
+; '(rw-hunspell-use-rw-ispell t)
+;)
+;'(flyspell-issue-message-flag nil)
+;(add-hook 'text-mode-hook (lambda() (flyspell-mode 1)))
+;(add-hook 'LaTeX-mode-hook (lambda() (flyspell-mode 1)))
+;(add-hook 'tex-mode-hook (lambda() (flyspell-mode 1)))
+;(add-hook 'bibtex-mode-hook (lambda() (flyspell-mode 1)))
+;(add-hook 'org-mode-hook (lambda() (flyspell-mode 1)))
+
+;;-- LaTeX config end
+
+;;-- Color theme
+(require 'color-theme)
+(color-theme-initialize)
+(setq color-theme-is-global t)
+(color-theme-zenburn)
+
+;;-- Plaintext file editation hacks and suggestions:
+(require 'deft)
+(setq deft-extension "org")
+(setq deft-text-mode 'org-mode)
+(setq deft-directory "~/writings/deft")
+(setq deft-use-filename-as-title t)
+(global-set-key [f8] 'deft)
+
+;;-- Random Emacs configuration:
+(require 'smooth-scrolling)
+(setq smooth-scroll-margin 2)
+(tool-bar-mode -1) ;disable toolbar
+(scroll-bar-mode -1) ;disable scrollbar
+(menu-bar-mode -1) ;disable menu
+(global-linum-mode 1)  ;turns on line numbers
+(global-set-key [?\C-h] 'delete-backward-char) ;maps 'C-h' to backspace
+(global-set-key [?\C-x ?h] 'help-command) ;maps emacs help to 'M-x h'
+(global-set-key [?\C-j] 'evil-forward-char) ;ako sipka doprava
+
+(setq-default fill-column 72) ;when exceeded, automatically jumps on new line
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(setq-default auto-fill-function 'do-auto-fill)
+;(require highlight-indentation)
+;(global-highlight-indentation-mode 1)
+;; Show line-number and column-number in the mode line
+(line-number-mode 1)
+(column-number-mode 1)
+;; highlight current line
+(global-hl-line-mode 0)
+(blink-cursor-mode 1)      ;; or pass in -1 to turn it off   
+(setq x-stretch-cursor t) ;; cursor will be as wide as tab character for example
+
+(require 'yasnippet) ;my own snippets goes to ~/.emacs.d/snippets
+(yas/global-mode 1)
+
+(set-background-color "#212121")
+

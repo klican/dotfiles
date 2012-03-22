@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="draw_background" mtime="1305668209" type="bool" value="true"/>
+	<entry name="picture_filename" mtime="1305668209" type="string">
+		<stringvalue>/home/lelio/Firefox_wallpaper.png</stringvalue>
+	</entry>
+	<entry name="picture_options" mtime="1305668209" type="string">
+		<stringvalue>centered</stringvalue>
+	</entry>
+	<entry name="primary_color" mtime="1305668208" type="string">
+		<stringvalue>#6666baba0000</stringvalue>
+	</entry>
+</gconf>

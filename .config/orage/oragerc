@@ -1,0 +1,38 @@
+#Created by Orage
+
+[PARAMETERS]
+Timezone=Europe/Bratislava
+Archive limit=0
+Archive file=/home/lelio/.local/share/orage/orage_archive.ics
+Orage file=/home/lelio/.local/share/orage/orage.ics
+Sound application=play
+Main window X=1086
+Main window Y=30
+Main window size X=276
+Main window size Y=203
+Eventlist window pos X=257
+Eventlist window pos Y=30
+Eventlist window X=500
+Eventlist window Y=350
+Eventlist extra days=0
+Show Main Window Menu=true
+Select Always Today=true
+Show borders=false
+Show heading=true
+Show day names=true
+Show weeks=true
+Show todos=true
+Show event days=1
+Show in pager=true
+Show in systray=true
+Show in taskbar=true
+Start visible=false
+Start minimized=false
+Set sticked=true
+Set ontop=true
+Use dynamic icon=true
+XIcal week start day=6
+Show days=false
+Foreign file count=0
+Logging level=0
+Priority list limit=8

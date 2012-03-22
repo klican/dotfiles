@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="jobcode" mtime="1313062370" type="string">
+		<stringvalue>noname</stringvalue>
+	</entry>
+</gconf>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="directory_pattern" mtime="1312277368" type="string">
+		<stringvalue>%Y/%m/%d</stringvalue>
+	</entry>
+	<entry name="import_dir" mtime="1312277368" type="string">
+		<stringvalue>/home/lelio</stringvalue>
+	</entry>
+	<entry name="commit_metadata" mtime="1312277368" type="bool" value="false"/>
+	<entry name="auto_import" mtime="1312277368" type="bool" value="true"/>
+</gconf>

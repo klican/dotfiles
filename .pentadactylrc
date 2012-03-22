@@ -1,0 +1,28 @@
+"1.0b7pre-hg6239-default "(created 2011/07/02 23:19:21)"
+
+loadplugins '\.(js|penta)$'
+group user
+highlight Hint font: bold 13.5px "DejaVu Sans Mono", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black; text-transform: uppercase;
+highlight Hint::after content: attr(number) !important; font-size: 10.5pt;
+map -modes=v j v_<Down>
+map -modes=v k v_<Up>
+map -modes=n,v j <count>8<C-e>
+map -modes=n,v k <count>8<C-y>
+map <C-o> H
+map <C-i> L
+set guioptions=bCs
+set hintkeys=asdfghjklzxcvmwertyuiop
+
+" vim: set ft=pentadactyl:
+
+colorscheme zenburn
+style "chrome://*" #appmenu-toolbar-button { display:none; } 
+
+"hi Hint               font-family: monospace; font-size: 12pt; font-weight: normal; color: #fff; background-color: #666; padding: 0px 1px; border: 1px solid #FFFFFF;
+
+"hi HintElem             background-color: #222222; color: #f6e9e9;
+hi HintElem              background-color: ; color: ;
+
+ map ú+ :js Zotero_Browser.scrapeThisPage(".")<CR>
+command zscrape js Zotero_Browser.scrapeThisPage(".");
+"command mendeley js onClick:document.getElementsByTagName('body')[0].appendChild(document.createElement('script')).setAttribute('src','http://www.mendeley.com/min.php/bookmarklet');

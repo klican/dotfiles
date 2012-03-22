@@ -1,0 +1,7 @@
+[user]
+	name = Andrej Klič
+	email = andrej.klic@gmail.com
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
