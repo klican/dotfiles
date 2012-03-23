@@ -53,6 +53,9 @@ auto  #auctex's shit
 !/.vim/gvimrc
 !/.vim/vimrc
 !/.mpd
+/.mpd/*
+!/.mpd/mpd.conf
+!/.mpd/playlists
 !/.ncmpcpp
 !/.orta
 !/.stardict

@@ -5,7 +5,7 @@ set guioptions+=ac
 "set gfn=DejaVu\ Sans\ Mono\ 10
 set guifont=Envy\ Code\ R\ 10
 "set guifont=Inconsolata-g\ 10
-colorscheme darkburn
+colorscheme zenburn
 
 set grepprg=grep\ -nH\ $* "vim-latex post-install recommendation
 let g:tex_flavor = "latex" "vim-latex post-install recommendation

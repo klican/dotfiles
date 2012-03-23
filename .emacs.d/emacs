@@ -16,6 +16,8 @@
 (require 'evil-numbers)
 (evil-mode 1)
 (setq evil-default-cursor t)
+(setq evil-want-C-u-scroll t)
+(setq evil-want-fine-undo t)
 (require 'surround)
 (global-surround-mode 1)
 (require 'evil-numbers)
@@ -25,6 +27,9 @@
 (evil-leader/set-key
   "s" 'color-theme-solarized-dark) ;testovanie
 (require 'evil)
+(require 'ace-jump-mode)
+;- a minor mode for Emacs, enabling fast/direct cursor-moving in current view
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 ;;-- Evil, -the Emacs's Vim emulator configuration
 ;Org-mode configure
 (evil-declare-key 'normal org-mode-map
@@ -43,7 +48,7 @@
   (kbd "M-J") 'org-metadown
   (kbd "M-K") 'org-metaup
   (kbd "M-L") 'org-metaright
-  (kbd "SPC") 'ace-jump-mode)
+  )
 
 (evil-declare-key 'insert org-mode-map
   (kbd "M-j") 'org-shiftleft
@@ -51,7 +56,8 @@
   (kbd "M-H") 'org-metaleft
   (kbd "M-J") 'org-metadown
   (kbd "M-K") 'org-metaup
-  (kbd "M-L") 'org-metaright)
+  (kbd "M-L") 'org-metaright
+  )
 
 ;; active Babel languages
 (org-babel-do-load-languages
@@ -124,6 +130,7 @@
 (tool-bar-mode -1) ;disable toolbar
 (scroll-bar-mode -1) ;disable scrollbar
 (menu-bar-mode -1) ;disable menu
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (global-linum-mode 1)  ;turns on line numbers
 (global-set-key [?\C-h] 'delete-backward-char) ;maps 'C-h' to backspace
 (global-set-key [?\C-x ?h] 'help-command) ;maps emacs help to 'M-x h'
@@ -144,6 +151,10 @@
 
 (require 'yasnippet) ;my own snippets goes to ~/.emacs.d/snippets
 (yas/global-mode 1)
+
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 (set-background-color "#212121")
 
