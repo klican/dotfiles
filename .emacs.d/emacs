@@ -61,13 +61,22 @@
 
 ;; active Babel languages
 (org-babel-do-load-languages
- 'org-babel-load-languages
- '((gnuplot . t)))
-;; add additional languages with '((language . t)))
+'org-babel-load-languages
+'((gnuplot . t)
+  (latex . t)
+  ))
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
+;; do not ask me for confirmation on C-c C-c
+(setq org-confirm-babel-evaluate nil)
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "/usr/share/emacs/site-lisp/auto-complete/ac-dict")
+(ac-config-default)
 ;-- LaTeX config begin
 (require 'auto-complete-yasnippet)
 (load "auctex.el" nil t t)
