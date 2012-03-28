@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 2.0.0
+###  vlc 2.0.1
 ###
 
 ###
@@ -59,6 +59,9 @@
 # TS ID (integer)
 #sout-ts-tsid=0
 
+# NET ID (integer)
+#sout-ts-netid=0
+
 # PMT Program numbers (string)
 #sout-ts-program-pmt=
 
@@ -67,6 +70,9 @@
 
 # Mux PMT (requires --sout-ts-es-id-pid) (string)
 #sout-ts-muxpmt=
+
+# SDT Descriptors (requires --sout-ts-es-id-pid) (string)
+#sout-ts-sdtdesc=
 
 # Data alignment (boolean)
 #sout-ts-alignment=1
@@ -273,9 +279,6 @@
 # Session name (string)
 #sout-standard-name=
 
-# Session groupname (string)
-#sout-standard-group=
-
 # Session description (string)
 #sout-standard-description=
 
@@ -304,6 +307,9 @@
 
 # Session name (string)
 #sout-rtp-name=
+
+# Session category (string)
+#sout-rtp-cat=
 
 # Session description (string)
 #sout-rtp-description=
@@ -775,7 +781,7 @@ sout-display-delay=1500
 [samplerate] # Secret Rabbit Code (libsamplerate) resampler
 
 # Sample rate converter type (integer)
-#src-converter-type=1
+#src-converter-type=2
 
 [a52tofloat32] # ATSC A/52 (AC-3) audio decoder
 
@@ -1294,11 +1300,6 @@ ffmpeg-hw=1
 
 # Workaround for France (boolean)
 #telx-french-workaround=0
-
-[fluidsynth] # FluidSynth MIDI synthesizer
-
-# Sound fonts (string)
-#soundfont=
 
 [vorbis] # Vorbis audio decoder
 
@@ -1854,6 +1855,9 @@ sap-addr=233.10.47.10
 # DVB adapter (integer)
 #dvb-adapter=0
 
+# DVB device (integer)
+#dvb-device=0
+
 # Do not demultiplex (boolean)
 #dvb-budget-mode=0
 
@@ -1958,25 +1962,6 @@ sap-addr=233.10.47.10
 
 # Continuous 22kHz tone (integer)
 #dvb-tone=-1
-
-[access_smb] # SMB input
-
-# SMB user name (string)
-#smb-user=
-
-# SMB password (string)
-#smb-pwd=
-
-# SMB domain (string)
-#smb-domain=
-
-[cdda] # Audio CD input
-
-# CDDB Server (string)
-#cddb-server=freedb.videolan.org
-
-# CDDB port (integer)
-#cddb-port=8880
 
 [access_jack] # JACK audio input
 
@@ -2870,8 +2855,11 @@ rss-color=12632256
 
 [alsa] # ALSA audio output
 
-# ALSA device (string)
+# Audio output device (string)
 #alsa-audio-device=default
+
+# Audio output channels (integer)
+#alsa-audio-channels=6
 
 [jack] # JACK audio output
 
@@ -3310,6 +3298,9 @@ skins2-transparency=1
 
 [avformat] # Avformat demuxer
 
+# Format name (string)
+#ffmpeg-format=
+
 # Avformat mux (string)
 #ffmpeg-mux=
 
@@ -3400,7 +3391,7 @@ freetype-color=12632256
 #audio=1
 
 # Default audio volume (integer)
-volume=108
+volume=268
 
 # Audio output volume step (integer)
 #volume-step=32
@@ -4593,6 +4584,21 @@ key-vol-down=Ctrl+j
 # Playlist bookmark 10 (string)
 #bookmark10=
 
+[fluidsynth] # FluidSynth MIDI synthesizer
+# Sound fonts (string)
+#soundfont=
+[access_smb] # SMB input
+# SMB user name (string)
+#smb-user=
+# SMB password (string)
+#smb-pwd=
+# SMB domain (string)
+#smb-domain=
+[cdda] # Audio CD input
+# CDDB Server (string)
+#cddb-server=freedb.videolan.org
+# CDDB port (integer)
+#cddb-port=8880
 [lirc] # Infrared remote control interface
 # Change the lirc configuration file (string)
 #lirc-file=
