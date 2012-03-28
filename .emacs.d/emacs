@@ -1,5 +1,6 @@
 ;;-- el-get, -the Emacs pacgage manager initialization
 (add-to-list 'load-path "~/.emacs.d/goodies/")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil t)
@@ -11,9 +12,37 @@
 
 (el-get 'sync)
 
+;Advanced setup with local recipes
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(require 'el-get)
+
+;; local sources
+(setq my-packages
+      (append
+'( 
+el-get 
+ace-jump-mode 
+auto-pair-plus
+auctex 
+reftex
+deft
+evil
+evil-leader
+evil-surround
+evil-numbers
+lua-mode
+org-mode
+smooth-scrolling
+yasnippet
+)
+       (mapcar 'el-get-source-name el-get-sources)))
+
+(el-get 'sync my-packages)
+
 ;;-- Evil, -the Emacs's Vim emulator configuration
 (require 'undo-tree)
 (require 'evil-numbers)
+(setq evil-find-skip-newlines t)
 (evil-mode 1)
 (setq evil-default-cursor t)
 (setq evil-want-C-u-scroll t)
@@ -21,11 +50,9 @@
 (require 'surround)
 (global-surround-mode 1)
 (require 'evil-numbers)
-(setq evil-leader/leader ","
-      evil-leader/i-all-states t)
 (require 'evil-leader)
-(evil-leader/set-key
-  "s" 'color-theme-solarized-dark) ;testovanie
+(setq evil-leader/leader ",")
+(setq evil-leader/i-all-states t)
 (require 'evil)
 (require 'ace-jump-mode)
 ;- a minor mode for Emacs, enabling fast/direct cursor-moving in current view
@@ -186,10 +213,11 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 ;;-- LaTeX config end
 
 ;;-- Color theme
-(require 'color-theme)
-(color-theme-initialize)
-(setq color-theme-is-global t)
-(color-theme-desert)
+;(require 'color-theme)
+;(color-theme-initialize)
+;(setq color-theme-is-global t)
+;(color-theme-zenburn)
+(load-theme 'darkburn t)
 
 ;;-- Plaintext file editation hacks and suggestions:
 (require 'deft)
@@ -214,6 +242,11 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (setq-default fill-column 72) ;when exceeded, automatically jumps on new line
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq-default auto-fill-function 'do-auto-fill)
+(require 'autopair)
+(autopair-global-mode 1)
+(setq autopair-autowrap t)
+(show-paren-mode 1)
+(setq show-paren-delay 0)
 ;(require highlight-indentation)
 ;(global-highlight-indentation-mode 1)
 ;; Show line-number and column-number in the mode line
@@ -231,5 +264,15 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
-(set-background-color "#212121")
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
