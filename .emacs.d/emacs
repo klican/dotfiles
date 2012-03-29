@@ -58,14 +58,55 @@ yasnippet
 ;- a minor mode for Emacs, enabling fast/direct cursor-moving in current view
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 ;;-- Evil, -the Emacs's Vim emulator configuration
-;Org-mode configure
 
+;Org-mode configure
 ;; The following lines are always needed. Choose your own keys.
+(require 'org-special-blocks)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+
+(require 'org-latex)
+(setq org-export-latex-listings t)
+(add-to-list 'org-export-latex-packages-alist '("" "listings"))
+(add-to-list 'org-export-latex-packages-alist '("" "color"))
+
+(setq org-export-latex-packages-alist
+      '(("" "graphicx" t)
+            ("" "longtable" nil)
+            ("" "float" nil)))
+
+      "Automatically select the tex packages to include."
+      ;; default packages for ordinary latex or pdflatex export
+      (setq org-export-latex-default-packages-alist
+            '("%\\usepackage[paper=a4,fontsize=11]{scrartcl}"
+	      "%\\setkomafont{sectioning}{\\rmfamily\\bfseries}"
+	      ("AUTO" "inputenc"  t)
+              ("T1"   "fontenc"   t)
+              ("slovak" "babel"   t)
+	      (""     "lmodern"   t)
+              (""     "fixltx2e"  nil)
+              (""     "wrapfig"   nil)
+	      (""     "fancyhdr"  t)
+	      (""     "rotating"  t)
+              (""     "soul"      t)
+              (""     "textcomp"  t)
+              (""     "marvosym"  t)
+;             (""     "wasysym"   t)  ; conflicts with amsmath
+              (""     "latexsym"  t)
+	      (""     "textcomp"  t)
+	      (""     "amsmath"   t)
+              (""     "amssymb"   t)
+	      (""     "booktabs"  t)
+	      (""     "microtype" t)
+              (""     "hyperref"  nil)
+	      "\\renewcommand{\\headrulewidth}{0pt}"
+	      "\\pagestyle{fancy}"
+	      "\\fancyhead{}"
+	      "\\rfoot{\\small{Sádzané systémom \\LaTeXe}}"))
+
 
 (defun wicked/org-update-checkbox-count (&optional all)
   "Update the checkbox statistics in the current section.
