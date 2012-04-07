@@ -23,6 +23,10 @@
 el-get 
 ace-jump-mode 
 auto-pair-plus
+auto-complete
+auto-complete-extension
+auto-complete-latex
+auto-complete-yasnippet
 auctex 
 reftex
 deft
@@ -62,8 +66,11 @@ yasnippet
 ;Org-mode configure
 ;; The following lines are always needed. Choose your own keys.
 (require 'org-special-blocks)
+(setq org-startup-indented t)
+(setq org-hide-leading-stars t)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+;(add-hook 'org-mode-hook 'turn-on-org-cdlatex) ;Cannot open load file: cdlatex
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
@@ -81,8 +88,7 @@ yasnippet
       "Automatically select the tex packages to include."
       ;; default packages for ordinary latex or pdflatex export
       (setq org-export-latex-default-packages-alist
-            '("%\\usepackage[paper=a4,fontsize=11]{scrartcl}"
-	      "%\\setkomafont{sectioning}{\\rmfamily\\bfseries}"
+            '("%\\documentclass[paper=a4,fontsize=11]{scrartcl}"
 	      ("AUTO" "inputenc"  t)
               ("T1"   "fontenc"   t)
               ("slovak" "babel"   t)
@@ -90,6 +96,7 @@ yasnippet
               (""     "fixltx2e"  nil)
               (""     "wrapfig"   nil)
 	      (""     "fancyhdr"  t)
+              ("font=small,format=plain,labelfont=bf,up" "caption"  t)
 	      (""     "rotating"  t)
               (""     "soul"      t)
               (""     "textcomp"  t)
@@ -105,6 +112,7 @@ yasnippet
 	      "\\renewcommand{\\headrulewidth}{0pt}"
 	      "\\pagestyle{fancy}"
 	      "\\fancyhead{}"
+	      "%\\setkomafont{sectioning}{\\rmfamily\\bfseries}"
 	      "\\rfoot{\\small{Sádzané systémom \\LaTeXe}}"))
 
 
@@ -212,7 +220,6 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (define-key global-map "\C-cc" 'org-capture)
 
 ;-- LaTeX config begin
-;(require 'auto-complete-yasnippet)
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
@@ -298,8 +305,29 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (blink-cursor-mode 1)      ;; or pass in -1 to turn it off   
 (setq x-stretch-cursor t) ;; cursor will be as wide as tab character for example
 
+
+
+;(require 'auto-complete-extension)
+;
+;; dirty fix for having AC everywhere
+(define-globalized-minor-mode real-global-auto-complete-mode
+  auto-complete-mode (lambda ()
+                       (if (not (minibufferp (current-buffer)))
+                         (auto-complete-mode 1))
+                       ))
+(real-global-auto-complete-mode t)
+;(ac-flyspell-workaround)
+;
+(require 'auto-complete-latex)
+;(setq ac-l-dict-directory "~/.emacs/el-get/auto-complete-latex/ac-l-dict/")
+(add-to-list 'ac-modes 'LaTeX-mode)
+(add-to-list 'ac-modes 'org-mode)
+(add-hook 'LaTeX-mode-hook 'ac-l-setup)
+(add-hook 'org-mode-hook 'ac-l-setup)
+
 (require 'yasnippet) ;my own snippets goes to ~/.emacs.d/snippets
 (yas/global-mode 1)
+(require 'auto-complete-yasnippet)
 
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
@@ -317,3 +345,46 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;EXPERIMENTAL SETTINGS
+
+(require 'org-latex)
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+
+(add-to-list 'org-export-latex-classes
+             '("komaarticle"
+               "\\documentclass[paper=a4,fontsize=12pt]{scrartcl}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))  
+
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))  
+
+
+(add-to-list 'org-export-latex-classes
+             '("komareport"
+               "\\documentclass[paper=a4,fontsize=12pt]{scrreprt}"
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))  
+
+(defun org-export-latex-format-toc-org-article-sec-num (depth)
+  (when depth
+    (format "%% Org-mode is exporting headings to %s levels.\n\\tableofcontents\n"
+            depth)))
+(setq org-export-latex-format-toc-function 'org-export-latex-format-toc-org-article-sec-num)
+
+

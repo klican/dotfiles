@@ -59,6 +59,7 @@ stardict &
 #tilda &
 #(sleep 2 && pidgin) &
 #(sleep 4 && skype) &
+firefox &
 
 
 exec ck-launch-session awesome 

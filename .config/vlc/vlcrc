@@ -3391,7 +3391,7 @@ freetype-color=12632256
 #audio=1
 
 # Default audio volume (integer)
-volume=268
+volume=204
 
 # Audio output volume step (integer)
 #volume-step=32

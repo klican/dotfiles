@@ -9,10 +9,6 @@ call pathogen#infect()
 colorscheme wombat
 
 filetype plugin on
-au FileType * exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/".expand('<amatch>'))
-set complete+=k
-"previous is for completion on hitting the Tab in .tex files. It works with the
-"Supertab plugin and a dictionary file.
 filetype plugin indent on "Turn on file type detection
 set nocp
 set t_Co=256
@@ -33,7 +29,7 @@ map gm :call cursor(0, virtcol('$')/2)<CR>
 set backspace=indent,eol,start "bez tohto bs maže znaky iba z aktuálne napísaného textu
 "set incsearch "Highlight searched string as it's typed 
 set scrolloff=2
-"nmap <silent> <C-n> <Esc>:call ToggleHLSearch()<CR> 
+nmap <silent> <C-n> <Esc>:call ToggleHLSearch()<CR> 
 "Hovewer don't know exactly what previous line does :)
 
 set wildmenu "Enhanced command line completion
@@ -76,30 +72,7 @@ command -nargs=0 NERDTreeClose :call NERDTreeClose()
 
 nmap \ntc :NERDTreeClose<CR>
 
-inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count) "initialize the repeat.vim
 
 " Use ranger as vim file manager:
 "When <leader>r is pressed, ranger is launched with RANGER_RETURN_FILE
@@ -122,3 +95,16 @@ function! Ranger()
 endfunction
 
 nmap <leader>r :call Ranger()<cr>
+
+
+ " Autocomplete already-existing words in the file with tab (extremely useful!)
+function InsertTabWrapper()
+      let col = col('.') - 1
+      if !col || getline('.')[col - 1] !~ '\k'
+          return "\<tab>"
+      else
+          return "\<c-p>"
+      endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr> 
+" duh, ignore this garbage made by the website:</cr></c-r></tab></c-p></tab>
