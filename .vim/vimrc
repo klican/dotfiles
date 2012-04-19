@@ -10,7 +10,9 @@ colorscheme wombat
 
 filetype plugin on
 filetype plugin indent on "Turn on file type detection
-set nocp
+set shiftwidth =4 " The '>>' and '<<' command will indent by 4 spaces
+set cindent
+set nocompatible "turn off backward compatibility with the historic vi editor
 set t_Co=256
 syntax enable
 autocmd Filetype tex setlocal nofoldenable
@@ -25,9 +27,9 @@ set smartcase  "but case-sensitive if expression contais a capital letter
 
 "This jumps to the middle of the actual line
 map gm :call cursor(0, virtcol('$')/2)<CR>
-"set hlsearch "Highlight search things
+set hlsearch "Highlight search things
+set incsearch "Highlight searched string as it's typed 
 set backspace=indent,eol,start "bez tohto bs maže znaky iba z aktuálne napísaného textu
-"set incsearch "Highlight searched string as it's typed 
 set scrolloff=2
 nmap <silent> <C-n> <Esc>:call ToggleHLSearch()<CR> 
 "Hovewer don't know exactly what previous line does :)
@@ -38,16 +40,15 @@ set wildmode=list:longest "Complete files like a shell
 set mouse=a	   "Enable the use of the mouse
 set showcmd 	   
 "zobrazuje priebezne zadavany prikaz (prinosne hl. pri viacznakovych prikazoch ako napr qg})
-set grepprg=grep\ -nH\ $* "vim-latex post-install recommendation
-let g:tex_flavor = "latex" "vim-latex post-install recommendation
 
 
 "set showmatch 	"zapíšete-li pravou závorku, ukáže vám k ní příslušející levou (krátce na ni poskočí kurzorem a zase se vrátí); hodně užitečné třeba pro TeXovské texty, které se hemží závorkami
-set textwidth=80 "Zadáte-li nenulovou hodnotu, bude Vim „hlídat“ pravý okraj a kdykoli dojde k jeho překročení, přesune při psaní aktuální slovo na začátek nového řádku.
+set textwidth=74 "Zadáte-li nenulovou hodnotu, bude Vim „hlídat“ pravý okraj a kdykoli dojde k jeho překročení, přesune při psaní aktuální slovo na začátek nového řádku.
  
 " Smart mappings on the command line
 cno $h e ~/
 cno $d e ~/Desktop/
+cno $w e ~/writings/
 cno $j e ./
 cno $c e <C-\>eCurrentFileDir("e")<cr>
 " $q is super useful when browsing on the command line
@@ -62,14 +63,12 @@ function NERDTreeToggle()
   execute ":NERDTreeToggle"
 endfunction
 command -nargs=0 NERDTreeToggle :call NERDTreeToggle()
-
 nmap \nt :NERDTreeToggle<CR>
 
 function NERDTreeClose()
   execute ":NERDTreeClose"
 endfunction
 command -nargs=0 NERDTreeClose :call NERDTreeClose()
-
 nmap \ntc :NERDTreeClose<CR>
 
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count) "initialize the repeat.vim
@@ -78,7 +77,6 @@ silent! call repeat#set("\<Plug>MyWonderfulMap", v:count) "initialize the repeat
 "When <leader>r is pressed, ranger is launched with RANGER_RETURN_FILE
 "environment variable set to a temporary file name. After ranger quits, the
 "selected filename is read from the temporary file, and vim opens it.
-
 function! Ranger()
     " Get a temp file name without creating it
     let tmpfile = substitute(system('mktemp -u'), '\n', '', '')
@@ -93,7 +91,6 @@ function! Ranger()
     endif
     redraw!
 endfunction
-
 nmap <leader>r :call Ranger()<cr>
 
 
@@ -108,3 +105,70 @@ function InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr> 
 " duh, ignore this garbage made by the website:</cr></c-r></tab></c-p></tab>
+
+""___________________________________""
+"" Below goes experimental settings: ""
+"""""""""""""""""""""""""""""""""""""""
+if has("vms")
+  set nobackup          " do not keep a backup file, use versions instead
+else
+  set backup            " keep a backup file
+endif
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+set formatoptions +=2
+set endofline
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+"Smooth scrolling
+"If you like the scrolling to go a bit smoother, you can use these mappings:
+:map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+:map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+
+set clipboard=unnamed ""doesn't need to type "* (like in "*p), when using clipboard

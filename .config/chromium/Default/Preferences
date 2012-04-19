@@ -1,0 +1,292 @@
+{
+   "browser": {
+      "clear_lso_data_enabled": true,
+      "custom_chrome_frame": false,
+      "window_placement": {
+         "bottom": 766,
+         "left": 0,
+         "maximized": false,
+         "right": 1364,
+         "top": 14,
+         "work_area_bottom": 768,
+         "work_area_left": 0,
+         "work_area_right": 1366,
+         "work_area_top": 0
+      }
+   },
+   "cloud_print": {
+      "email": ""
+   },
+   "countryid_at_install": 21323,
+   "default_apps_install_state": 1,
+   "default_search_provider": {
+      "enabled": true,
+      "encodings": "UTF-8",
+      "icon_url": "http://www.google.com/favicon.ico",
+      "id": "2",
+      "instant_url": "{google:baseURL}webhp?{google:RLZ}sourceid=chrome-instant&{google:instantFieldTrialGroupParameter}ie={inputEncoding}{google:instantEnabledParameter}{searchTerms}",
+      "keyword": "google.sk",
+      "name": "Google",
+      "prepopulate_id": "1",
+      "search_url": "{google:baseURL}search?{google:RLZ}{google:acceptedSuggestion}{google:originalQueryForSuggestion}{google:searchFieldtrialParameter}{google:instantFieldTrialGroupParameter}sourceid=chrome&ie={inputEncoding}&q={searchTerms}",
+      "suggest_url": "{google:baseSuggestURL}search?{google:searchFieldtrialParameter}{google:instantFieldTrialGroupParameter}client=chrome&hl={language}&q={searchTerms}"
+   },
+   "dns_prefetching": {
+      "host_referral_list": [ 2, [ "http://tools.google.com/", [ "http://fonts.googleapis.com/", 2.529573049612, "http://themes.googleusercontent.com/", 2.529573049612, "http://tools.google.com/", 3.8132369852359993, "http://www.google-analytics.com/", 2.529573049612, "http://www.google.com/", 3.1714050174239996 ] ], [ "https://checkout.google.com/", [ "https://checkout.google.com/", 1.2924112178215337 ] ], [ "https://chrome.google.com/", [ "https://checkout.google.com/", 4.255301399999999, "https://chrome.google.com/", 3.2643407999999994, "https://lh3.googleusercontent.com/", 7.302570255901478, "https://lh4.googleusercontent.com/", 7.115992458389638, "https://lh5.googleusercontent.com/", 6.125031858389638, "https://lh6.googleusercontent.com/", 7.751406106523518, "https://qa-lighthouse.sandbox.google.com/", 2.6037003999999997, "https://ssl.google-analytics.com/", 2.9340205999999998, "https://ssl.gstatic.com/", 2.2733802, "https://themes.googleusercontent.com/", 2.2733802 ] ], [ "https://plusone.google.com/", [ "https://apis.google.com/", 2.2733802, "https://lh4.googleusercontent.com/", 2.2733802, "https://plusone.google.com/", 2.6037003999999997 ] ], [ "https://s.ytimg.com/", [ "https://i4.ytimg.com/", 2.6037003999999997, "https://s.ytimg.com/", 2.2733802 ] ], [ "https://www.youtube.com/", [ "https://s.ytimg.com/", 3.5946609999999994 ] ] ],
+      "startup_list": [ 1, "https://apis.google.com/", "https://checkout.google.com/", "https://chrome.google.com/", "https://fonts.googleapis.com/", "https://lh4.googleusercontent.com/", "https://lh5.googleusercontent.com/", "https://ssl.google-analytics.com/", "https://ssl.gstatic.com/", "https://themes.googleusercontent.com/", "https://www.google.com/" ]
+   },
+   "download": {
+      "directory_upgrade": true,
+      "extensions_to_open": ""
+   },
+   "extensions": {
+      "autoupdate": {
+         "next_check": "12978287633679707"
+      },
+      "chrome_url_overrides": {
+         "bookmarks": [ "chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/main.html" ]
+      },
+      "settings": {
+         "ahfgeienlihckogmohjhadlkjgocpleb": {
+            "active_bit": true,
+            "active_permissions": {
+               "api": [ "appNotifications", "management", "webstorePrivate" ]
+            },
+            "app_launcher_ordinal": "n",
+            "page_ordinal": "n"
+         }
+      },
+      "theme": {
+         "id": "",
+         "use_system": false
+      }
+   },
+   "google": {
+      "services": {
+         "username": "andrej.klic@gmail.com"
+      }
+   },
+   "homepage": "http://www.google.com/",
+   "homepage_is_newtabpage": true,
+   "http_throttling": {
+      "enabled": true
+   },
+   "net": {
+      "http_server_properties": {
+         "accounts.google.com:443": {
+            "settings": [ {
+               "id": 5,
+               "value": 32
+            }, {
+               "id": 6,
+               "value": 0
+            } ],
+            "supports_spdy": true
+         },
+         "accounts.google.sk:443": {
+            "settings": [ {
+               "id": 5,
+               "value": 32
+            }, {
+               "id": 6,
+               "value": 0
+            } ],
+            "supports_spdy": true
+         },
+         "checkout.google.com:443": {
+            "settings": [ {
+               "id": 4,
+               "value": 100
+            } ],
+            "supports_spdy": true
+         },
+         "chrome.google.com:443": {
+            "settings": [ {
+               "id": 4,
+               "value": 100
+            } ],
+            "supports_spdy": true
+         },
+         "clients4.google.com:443": {
+            "settings": [ {
+               "id": 5,
+               "value": 51
+            }, {
+               "id": 6,
+               "value": 0
+            } ],
+            "supports_spdy": true
+         },
+         "fonts.googleapis.com:443": {
+            "settings": [ {
+               "id": 5,
+               "value": 32
+            }, {
+               "id": 6,
+               "value": 0
+            } ],
+            "supports_spdy": true
+         },
+         "lh5.googleusercontent.com:443": {
+            "settings": [ {
+               "id": 4,
+               "value": 100
+            } ],
+            "supports_spdy": true
+         },
+         "qa-lighthouse.sandbox.google.com:443": {
+            "settings": [ {
+               "id": 4,
+               "value": 100
+            } ],
+            "supports_spdy": true
+         },
+         "ssl.google-analytics.com:443": {
+            "settings": [ {
+               "id": 4,
+               "value": 100
+            } ],
+            "supports_spdy": true
+         },
+         "ssl.gstatic.com:443": {
+            "settings": [ {
+               "id": 4,
+               "value": 100
+            } ],
+            "supports_spdy": true
+         },
+         "themes.googleusercontent.com:443": {
+            "settings": [ {
+               "id": 5,
+               "value": 3
+            }, {
+               "id": 6,
+               "value": 0
+            } ],
+            "supports_spdy": true
+         },
+         "www.google.com:443": {
+            "settings": [ {
+               "id": 4,
+               "value": 100
+            } ],
+            "supports_spdy": true
+         }
+      }
+   },
+   "ntp": {
+      "app_page_names": [ "Aplik\u00E1cie" ],
+      "promo_build": 0,
+      "promo_closed": false,
+      "promo_end": 1299830340.0,
+      "promo_feature_mask": 0,
+      "promo_group": 5,
+      "promo_group_max": 0,
+      "promo_group_timeslice": 0,
+      "promo_is_logged_in_to_plus": false,
+      "promo_line": "Pou\u017E\u00EDvate prehliada\u010D Chrome na inom po\u010D\u00EDta\u010Di? Vezmite si z\u00E1lo\u017Eky a \u010Fal\u0161ie nastavenia so sebou.",
+      "promo_platform": 0,
+      "promo_resource_cache_update": "1333813149.608319",
+      "promo_start": 1299830280.0,
+      "promo_views": 0,
+      "promo_views_max": 0,
+      "shown_page": 2048
+   },
+   "plugins": {
+      "enabled_internal_pdf3": true,
+      "enabled_nacl": true,
+      "last_internal_directory": "/usr/lib/chromium",
+      "plugins_list": [ {
+         "enabled": true,
+         "name": "Remoting Viewer",
+         "path": "internal-remoting-viewer",
+         "version": ""
+      }, {
+         "enabled": true,
+         "name": "Remoting Viewer"
+      }, {
+         "enabled": true,
+         "name": "Native Client",
+         "path": "/usr/lib/chromium/libppGoogleNaClPluginChrome.so",
+         "version": ""
+      }, {
+         "enabled": true,
+         "name": "Native Client"
+      }, {
+         "enabled": true,
+         "name": "Google Talk Plugin",
+         "path": "/opt/google/talkplugin/libnpgoogletalk.so",
+         "version": ""
+      }, {
+         "enabled": true,
+         "name": "Google Talk Plugin Video Accelerator",
+         "path": "/opt/google/talkplugin/libnpgtpo3dautoplugin.so",
+         "version": ""
+      }, {
+         "enabled": true,
+         "name": "Google Talk Plugin"
+      }, {
+         "enabled": true,
+         "name": "Shockwave Flash",
+         "path": "/usr/lib/mozilla/plugins/libflashplayer.so",
+         "version": "11.2 r202"
+      }, {
+         "enabled": true,
+         "name": "Flash"
+      }, {
+         "enabled": true,
+         "name": "Java(TM) Plug-in 1.7.0",
+         "path": "/opt/java/jre/lib/amd64/libnpjp2.so",
+         "version": "1.7.0"
+      }, {
+         "enabled": true,
+         "name": "Java"
+      } ]
+   },
+   "profile": {
+      "avatar_index": 0,
+      "content_settings": {
+         "pref_version": 1
+      },
+      "exited_cleanly": true,
+      "name": "Prv\u00FD pou\u017E\u00EDvate\u013E"
+   },
+   "sync": {
+      "acknowledged_types": [ "Bookmarks", "Preferences", "Passwords", "Autofill Profiles", "Autofill", "Themes", "Typed URLs", "Extensions", "Encryption keys", "Search Engines", "Sessions", "Apps", "App Notifications" ],
+      "app_notifications": false,
+      "apps": false,
+      "autofill": false,
+      "autofill_profile": false,
+      "bookmarks": false,
+      "encryption_bootstrap_token": "djEwDbesy697Bvr7dC6o+1f8CKHusQBld1np8SqOy4jVj20EPkFlwjj8+tvm9f7jo8TegPPDIX2PwAcqIGyYI/UX6Q==",
+      "extensions": false,
+      "has_setup_completed": true,
+      "keep_everything_synced": true,
+      "last_synced_time": "12978286834796498",
+      "passwords": false,
+      "preferences": false,
+      "search_engines": false,
+      "suppress_start": false,
+      "themes": false,
+      "typed_urls": false,
+      "using_oauth": false
+   },
+   "sync_promo": {
+      "show_ntp_bubble": false,
+      "startup_count": 1,
+      "user_skipped": true,
+      "view_count": 1
+   },
+   "webkit": {
+      "webprefs": {
+         "global": {
+            "fixed_font_family": "Envy Code R",
+            "minimum_font_size": 9,
+            "minimum_logical_font_size": 9,
+            "sansserif_font_family": "Verdana",
+            "serif_font_family": "Verdana",
+            "standard_font_family": "Verdana"
+         }
+      }
+   }
+}

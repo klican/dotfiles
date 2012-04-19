@@ -1,0 +1,65 @@
+{
+   "browser": {
+      "last_known_google_url": "http://www.google.sk/",
+      "last_prompted_google_url": "http://www.google.sk/",
+      "last_redirect_origin": ""
+   },
+   "local_state": {
+      "multiple_profile_prefs_version": 3
+   },
+   "ntp": {
+      "intro_display_count": 11,
+      "promo_locale": "sk",
+      "promo_version": 7,
+      "webstore_enabled": false
+   },
+   "profile": {
+      "info_cache": {
+         "Default": {
+            "avatar_icon": "chrome://theme/IDR_PROFILE_AVATAR_0",
+            "background_apps": false,
+            "name": "Prv\u00FD pou\u017E\u00EDvate\u013E",
+            "user_name": "andrej.klic@gmail.com"
+         }
+      },
+      "last_used": "Default"
+   },
+   "safe_browsing": {
+      "client_key": "2MplYw62c7mZ9sf9WqfpFg==",
+      "wrapped_key": "AKEgNiugUfgPOuakvT0-UOor2qrmSSswT-msFCQKMe6Ok4DOysfeZ57y7NJfmxmzIzDd2rxJzfOlPxUDIyJycVL5sB16LwVh8w=="
+   },
+   "show-first-run-bubble": false,
+   "shutdown": {
+      "num_processes": 1,
+      "num_processes_slow": 1,
+      "type": 1
+   },
+   "uninstall_metrics": {
+      "installation_date2": "1333813144",
+      "launch_count": "2"
+   },
+   "user_experience_metrics": {
+      "session_id": 1,
+      "stability": {
+         "breakpad_registration_fail": 2,
+         "breakpad_registration_ok": 0,
+         "crash_count": 0,
+         "debugger_not_present": 2,
+         "debugger_present": 0,
+         "exited_cleanly": true,
+         "incomplete_session_end_count": 0,
+         "last_timestamp_sec": "1333813772",
+         "launch_count": 2,
+         "launch_time_sec": "1333813623",
+         "page_load_count": 0,
+         "renderer_crash_count": 0,
+         "renderer_hang_count": 0,
+         "session_end_completed": true,
+         "stats_buildtime": "1333691719",
+         "stats_version": "18.0.1025.151-64-devel"
+      }
+   },
+   "was": {
+      "restarted": false
+   }
+}

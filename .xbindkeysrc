@@ -90,11 +90,21 @@
 "firefox"
     Control+Alt+Mod2 + f
 
+"firefox"
+    Alt+Mod2 + f
+
 "gvim"
     Control+Alt+Mod2 + g
 
+"gvim"
+    Alt+Mod2 + g
+
 "emacsclient -c"
     Control+Alt+Mod2 + e
+
+"emacsclient -c"
+    Alt+Mod2 + e
+    
     
 "urxvtc -e vim"
     Alt+Mod2 + v
@@ -104,8 +114,15 @@
 
 "urxvtc -e bash ranger"
     Control+Alt+Mod2 + r
+
+"urxvtc -e bash ranger"
+    Alt+Mod2 + r
+
 "urxvtc"
     Control+Alt+Mod2 + u
+
+"urxvtc"
+    Alt+Mod2 + u
 
 "urxvtc	-e ncmpcpp"
     Control+Alt+Mod2 + m
@@ -113,6 +130,9 @@
 "vlc ~/bin/playlist_intrak.m3u"
     Control+Alt+Mod2 + v
 
+"~/bin/touchpad-toggle.sh"
+   Mod2 + XF86Tools
+    
 "~/bin/VolumeNotifyMaster.sh up"
    XF86AudioRaiseVolume
 

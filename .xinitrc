@@ -29,10 +29,11 @@ urxvtd -q -f -o &
 #wicd-client &
 mpd ~/.mpd/mpd.conf 
 (sleep 3 && emacs --daemon) &
-dropboxd &
+#dropboxd &
 #(sleep 4.5 && pytyle2) &
 #(sleep 3 && devmon ) &
-xcompmgr & 
+#xcompmgr & 
+compton &
 #nitrogen --restore &
 #conky &
 #tint2 &
@@ -59,7 +60,7 @@ stardict &
 #tilda &
 #(sleep 2 && pidgin) &
 #(sleep 4 && skype) &
-firefox &
+#firefox &
 
 
 exec ck-launch-session awesome 

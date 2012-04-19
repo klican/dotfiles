@@ -18,7 +18,7 @@ require("awful.autofocus")
 require("vicious")
 require("scratch")
 require("revelation")
-require("rodentbane")
+-- require("rodentbane")
 -- }}}
 
 
@@ -36,8 +36,8 @@ beautiful.init(home .. "/.config/awesome/zenburn.lua")
 
 -- Window management layouts
 layouts = {
-  awful.layout.suit.tile,        -- 1
-  awful.layout.suit.tile.bottom, -- 2
+  awful.layout.suit.tile.bottom, -- 1
+  awful.layout.suit.tile,        -- 2
   awful.layout.suit.fair,        -- 3
   awful.layout.suit.max,         -- 4
   awful.layout.suit.magnifier,   -- 5
@@ -49,8 +49,8 @@ layouts = {
 -- {{{ Tags
 tags = {
   names  = { "www", "vim", "term", "pdf", "doc",6, 7, "foo", "mm" },
-  layout = { layouts[2], layouts[1], layouts[2], layouts[1], layouts[2],
-             layouts[2], layouts[2], layouts[1], layouts[2]
+  layout = { layouts[1], layouts[2], layouts[1], layouts[2], layouts[1],
+             layouts[1], layouts[1], layouts[2], layouts[1]
 }}
 
 for s = 1, scount do
@@ -177,8 +177,8 @@ upicon.image = image(beautiful.widget_netup)
 netwidget = widget({ type = "textbox" })
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="'
-  .. beautiful.fg_netdn_widget ..'">${wlan0 down_kb}</span> <span color="'
-  .. beautiful.fg_netup_widget ..'">${wlan0 up_kb}</span>', 2)
+  .. beautiful.fg_netdn_widget ..'">${eth0 down_kb}</span> <span color="'
+  .. beautiful.fg_netup_widget ..'">${eth0 up_kb}</span>', 2)
 -- }}}
 
 ---- {{{ Mail subject

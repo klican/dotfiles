@@ -133,6 +133,7 @@ alias syu='pacman -Syyu'
 alias S='pacman -S'
 alias rsn='pacman -Rsn'
 alias y='yaourt'
+alias ^L=clear
 alias aur='yaourt -Syyu --aur'
 alias devel='yaourt -Syu --devel'
 alias grep='grep --colour=auto'

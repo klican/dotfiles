@@ -25,9 +25,11 @@ ace-jump-mode
 auto-pair-plus
 auto-complete
 auto-complete-extension
+;auto-complete-chunk
 auto-complete-latex
 auto-complete-yasnippet
 auctex 
+cdlatex-mode
 reftex
 deft
 evil
@@ -36,6 +38,7 @@ evil-surround
 evil-numbers
 lua-mode
 org-mode
+magit
 smooth-scrolling
 yasnippet
 )
@@ -65,9 +68,12 @@ yasnippet
 
 ;Org-mode configure
 ;; The following lines are always needed. Choose your own keys.
+(require 'org-exp-blocks)
 (require 'org-special-blocks)
 (setq org-startup-indented t)
-(setq org-hide-leading-stars t)
+(setq org-hide-leading-stars 0 )
+(setq org-ctrl-k-protect-subtree t)
+(setq org-footnote-auto-adjust t)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 ;(add-hook 'org-mode-hook 'turn-on-org-cdlatex) ;Cannot open load file: cdlatex
@@ -287,7 +293,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (global-set-key [?\C-x ?h] 'help-command) ;maps emacs help to 'M-x h'
 (global-set-key [?\C-j] 'evil-forward-char) ;ako sipka doprava
 (defalias 'yes-or-no-p 'y-or-n-p)
-(setq-default fill-column 72) ;when exceeded, automatically jumps on new line
+(setq-default fill-column 74) ;when exceeded, automatically jumps on new line
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq-default auto-fill-function 'do-auto-fill)
 (require 'autopair)
@@ -307,8 +313,8 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 
 
 
-;(require 'auto-complete-extension)
-;
+(require 'auto-complete-extension)
+
 ;; dirty fix for having AC everywhere
 (define-globalized-minor-mode real-global-auto-complete-mode
   auto-complete-mode (lambda ()
@@ -317,9 +323,9 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
                        ))
 (real-global-auto-complete-mode t)
 ;(ac-flyspell-workaround)
-;
+
 (require 'auto-complete-latex)
-;(setq ac-l-dict-directory "~/.emacs/el-get/auto-complete-latex/ac-l-dict/")
+(setq ac-l-dict-directory "~/.emacs.d/el-get/auto-complete-latex/ac-l-dict/")
 (add-to-list 'ac-modes 'LaTeX-mode)
 (add-to-list 'ac-modes 'org-mode)
 (add-hook 'LaTeX-mode-hook 'ac-l-setup)
@@ -338,7 +344,8 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default))))
+ '(custom-safe-themes (quote ("19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
+ '(org-agenda-files (quote ("/tmp/shit.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -353,7 +360,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
   (setq org-export-latex-classes nil))
 
 (add-to-list 'org-export-latex-classes
-             '("komaarticle"
+             '("koma-article"
                "\\documentclass[paper=a4,fontsize=12pt]{scrartcl}"
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
@@ -372,7 +379,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 
 
 (add-to-list 'org-export-latex-classes
-             '("komareport"
+             '("koma-report"
                "\\documentclass[paper=a4,fontsize=12pt]{scrreprt}"
                ("\\chapter{%s}" . "\\chapter*{%s}")
                ("\\section{%s}" . "\\section*{%s}")
@@ -381,10 +388,57 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))  
 
-(defun org-export-latex-format-toc-org-article-sec-num (depth)
-  (when depth
-    (format "%% Org-mode is exporting headings to %s levels.\n\\tableofcontents\n"
-            depth)))
-(setq org-export-latex-format-toc-function 'org-export-latex-format-toc-org-article-sec-num)
+;(defun org-export-latex-format-toc-org-article-sec-num (depth)
+;  (when depth
+;    (format "%% Org-mode is exporting headings to %s levels.\n\\tableofcontents\n"
+;            depth)))
+;(setq org-export-latex-format-toc-function 'org-export-latex-format-toc-org-article-sec-num)
 
+
+;This should nicely format the tables in exported odt similarly as the
+;'booktabs' package in LaTeX
+;     (setq org-export-odt-table-styles
+;           (append org-export-odt-table-styles
+;     	      '(("TableWithHeaderRowAndColumn" "Custom"
+;     		 ((use-first-row-styles . t)
+;     		  (use-first-column-styles . t)))
+;     		("TableWithFirstRowandLastRow" "Custom"
+;     		 ((use-first-row-styles . t)
+;     		  (use-last-row-styles . t))))))
+
+;; Introduces compatibility of yasnippet with org-mode
+(defun yas/org-very-safe-expand ()
+  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            ;; yasnippet (using the new org-cycle hooks)
+            (make-variable-buffer-local 'yas/trigger-key)
+            (setq yas/trigger-key [tab])
+            (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+            (define-key yas/keymap [tab] 'yas/next-field)))
+
+(global-visual-line-mode t)
+(setq line-move-visual nil)
+
+
+;; use RefTeX on Org-mode files for LaTeX 
+;; don't forget to add following lines anywhere in Org-mode file (Org-mode
+;; will recognize them as LaTeX commands)
+;;\bibliographystyle{plain}
+;;\bibliography{BIB-NAME}
+
+(defun org-mode-reftex-setup ()
+;  (load-library "reftex")
+   (reftex-mode t)
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all))
+  (define-key org-mode-map (kbd "C-c )") 'reftex-citation))
+
+(add-hook 'org-mode-hook 'org-mode-reftex-setup)
+
+(require 'zotexo)
+(add-hook 'LaTeX-mode-hook 'zotexo-minor-mode)
+(add-hook 'org-mode-hook 'zotexo-minor-mode)
 

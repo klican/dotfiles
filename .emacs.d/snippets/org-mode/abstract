@@ -1,0 +1,6 @@
+#name : ABSTRACT
+#contributor : Rick Moynihan <rick@sourcesmouth.co.uk>
+# --
+#+BEGIN_abstract
+${0}
+#+END_abstract
