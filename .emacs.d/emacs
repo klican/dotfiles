@@ -71,6 +71,9 @@ yasnippet
   "lt" 'org-export-as-latex
   "lo" 'org-export-as-odt-and-open
   "ht" 'org-export-as-html-and-open
+   "h"  'evil-split-buffer
+  "v"  'split-window-vertically
+  "d"  'evil-delete-buffer
   )
 (require 'evil)
 (require 'ace-jump-mode)
@@ -196,7 +199,34 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
   (setq ad-return-value
 	(wicked/org-update-checkbox-count (ad-get-arg 1))))
 
-(evil-declare-key 'normal org-mode-map
+;(evil-declare-key 'normal org-mode-map
+;  (kbd "RET") 'org-open-at-point
+;  "za" 'org-cycle
+;  "zA" 'org-shifttab
+;  "zm" 'hide-body
+;  "zr" 'show-all
+;  "zo" 'show-subtree
+;  "zO" 'show-all
+;  "zc" 'hide-subtree
+;  "zC" 'hide-all
+;  (kbd "M-j") 'org-shiftleft
+;  (kbd "M-k") 'org-shiftright
+;  (kbd "M-H") 'org-metaleft
+;  (kbd "M-J") 'org-metadown
+;  (kbd "M-K") 'org-metaup
+;  (kbd "M-L") 'org-metaright
+;  )
+;
+;(evil-declare-key 'insert org-mode-map
+;  (kbd "M-j") 'org-shiftleft
+;  (kbd "M-k") 'org-shiftright
+;  (kbd "M-H") 'org-metaleft
+;  (kbd "M-J") 'org-metadown
+;  (kbd "M-K") 'org-metaup
+;  (kbd "M-L") 'org-metaright
+;  )
+
+(evil-define-key 'normal org-mode-map
   (kbd "RET") 'org-open-at-point
   "za" 'org-cycle
   "zA" 'org-shifttab
@@ -211,23 +241,49 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
   (kbd "M-H") 'org-metaleft
   (kbd "M-J") 'org-metadown
   (kbd "M-K") 'org-metaup
-  (kbd "M-L") 'org-metaright
-  )
+  (kbd "M-L") 'org-metaright)
 
-(evil-declare-key 'insert org-mode-map
+(evil-define-key 'normal orgstruct-mode-map
+  (kbd "RET") 'org-open-at-point
+  "za" 'org-cycle
+  "zA" 'org-shifttab
+  "zm" 'hide-body
+  "zr" 'show-all
+  "zo" 'show-subtree
+  "zO" 'show-all
+  "zc" 'hide-subtree
+  "zC" 'hide-all
   (kbd "M-j") 'org-shiftleft
   (kbd "M-k") 'org-shiftright
   (kbd "M-H") 'org-metaleft
   (kbd "M-J") 'org-metadown
   (kbd "M-K") 'org-metaup
-  (kbd "M-L") 'org-metaright
-  )
+  (kbd "M-L") 'org-metaright)
+
+(evil-define-key 'insert org-mode-map
+  (kbd "M-j") 'org-shiftleft
+  (kbd "M-k") 'org-shiftright
+  (kbd "M-H") 'org-metaleft
+  (kbd "M-J") 'org-metadown
+  (kbd "M-K") 'org-metaup
+  (kbd "M-L") 'org-metaright)
+
+(evil-define-key 'insert orgstruct-mode-map
+  (kbd "M-j") 'org-shiftleft
+  (kbd "M-k") 'org-shiftright
+  (kbd "M-H") 'org-metaleft
+  (kbd "M-J") 'org-metadown
+  (kbd "M-K") 'org-metaup
+  (kbd "M-L") 'org-metaright)
 
 ;; active Babel languages
 (org-babel-do-load-languages
 'org-babel-load-languages
-'((gnuplot . t)
+'(
+  (emacs-lisp . t)
+  (gnuplot . t)
   (latex . t)
+  (sh . t)
   ))
 ;; fontify code in code blocks
 (setq org-src-fontify-natively t)
@@ -356,7 +412,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("8465bf2aa97d7348a090ce2fc3c9d9baa8c2db24457522c4c644566958b72298" "6938c51c0a89f078c61b979af23ae4c32204458f16a6a08c1a683ab478a7bc6b" "19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
+ '(custom-safe-themes (quote ("d9d7a7c76f3d552f1c6da90736dd818b9423ad1e6047feeb8e1851a1b5191420" "7ec2d1c73249c206cce9ebcadee61dc5469b566eea1fe095b78273c96f28c0ca" "8465bf2aa97d7348a090ce2fc3c9d9baa8c2db24457522c4c644566958b72298" "6938c51c0a89f078c61b979af23ae4c32204458f16a6a08c1a683ab478a7bc6b" "19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
  '(org-agenda-files (quote ("/tmp/shit.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -510,3 +566,12 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; magit configuration
+(evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
+  "K" 'magit-discard-item
+  "L" 'magit-key-mode-popup-logging)
+(evil-add-hjkl-bindings magit-status-mode-map 'emacs
+  "K" 'magit-discard-item
+  "l" 'magit-key-mode-popup-logging
+  "h" 'magit-toggle-diff-refine-hunk)
