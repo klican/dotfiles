@@ -31,12 +31,12 @@ auto-complete-yasnippet
 auctex 
 ido-ubiquitous
 ido-yes-or-no
+idomenu
 ;ido-hacks ;; breaks ido <21.apr.2012>
 smex
 ;cdlatex-mode ;; that's a major mode, has it a lighter version, cdlatex-minor??
 reftex
 deft
-evil
 evil-leader
 evil-surround
 evil-numbers
@@ -62,8 +62,16 @@ yasnippet
 (global-surround-mode 1)
 (require 'evil-numbers)
 (require 'evil-leader)
-(setq evil-leader/leader ",")
+(setq evil-leader/leader "\\") ; can't be there "," 'cause it's occupied by evil already
 (setq evil-leader/i-all-states t)
+(evil-leader/set-key
+  "e" 'ido-find-file
+  "b" 'ido-switch-buffer
+  "ll" 'org-export-as-pdf-and-open
+  "lt" 'org-export-as-latex
+  "lo" 'org-export-as-odt-and-open
+  "ht" 'org-export-as-html-and-open
+  )
 (require 'evil)
 (require 'ace-jump-mode)
 ;- a minor mode for Emacs, enabling fast/direct cursor-moving in current view
@@ -476,7 +484,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
   ido-ignore-buffers ;; ignore these guys
   '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace"
      "^\*compilation" "^\*GTAGS" "^session\.*" "^\*")
-
+  ido-file-extensions-order '(".org" ".tex" ".txt" ".emacs" ".el")
   ido-work-directory-list '("~/" "~/.config" "~/documents" "~/downloads" "~/writings/")
   ido-case-fold  t                 ; be case-insensitive
 
