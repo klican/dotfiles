@@ -166,9 +166,4 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-"Smooth scrolling
-"If you like the scrolling to go a bit smoother, you can use these mappings:
-:map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
-:map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
-
 set clipboard=unnamed ""doesn't need to type "* (like in "*p), when using clipboard

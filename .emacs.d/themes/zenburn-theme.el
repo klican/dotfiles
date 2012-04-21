@@ -53,8 +53,7 @@
       (zenburn-fg-1 "#656555")
       (zenburn-bg-1 "#2b2b2b")
       (zenburn-bg-05 "#383838")
-      ;(zenburn-bg "#3f3f3f")
-      (zenburn-bg "#212121")
+      (zenburn-bg "#3f3f3f")
       (zenburn-bg+1 "#4f4f4f")
       (zenburn-bg+2 "#5f5f5f")
       (zenburn-bg+3 "#6f6f6f")
@@ -293,7 +292,20 @@
    `(gnus-x ((,class (:background ,zenburn-fg :foreground ,zenburn-bg))))
 
    ;; helm
+   `(helm-header
+     ((,class (:foreground ,zenburn-green
+			   :background ,zenburn-bg
+			   :underline nil
+			   :box nil))))
+   `(helm-source-header
+     ((,class (:foreground ,zenburn-yellow
+                           :background ,zenburn-bg-1
+			   :weight bold
+                           :box (:line-width -1 :style released-button)))))
    `(helm-selection ((,class (:background ,zenburn-bg-1))))
+   `(helm-selection-line ((,class (:background ,zenburn-bg-1))))
+   `(helm-visible-mark ((,class (:foreground ,zenburn-bg :background ,zenburn-yellow-2))))
+   `(helm-candidate-number ((,class (:foreground ,zenburn-green+4 :background ,zenburn-bg-1))))
 
    ;; hl-line-mode
    `(hl-line-face ((,class (:background ,zenburn-bg-1))))
@@ -372,6 +384,11 @@
    `(mew-face-mark-unread ((,class (:foreground ,zenburn-red-2))))
    `(mew-face-eof-message ((,class (:foreground ,zenburn-green))))
    `(mew-face-eof-part ((,class (:foreground ,zenburn-yellow))))
+
+   ;; mic-paren
+   `(paren-face-match ((,class (:foreground ,zenburn-cyan :background ,zenburn-bg :weight bold))))
+   `(paren-face-mismatch ((,class (:foreground ,zenburn-bg :background ,zenburn-magenta :weight bold))))
+   `(paren-face-no-match ((,class (:foreground ,zenburn-bg :background ,zenburn-red :weight bold))))
 
    ;; nav
    `(nav-face-heading ((,class (:foreground ,zenburn-yellow))))
@@ -507,7 +524,7 @@
    `(wl-highlight-summary-displaying-face ((,class (:underline t :weight bold))))
 
    ;; which-func-mode
-   `(which-func ((,class (:foreground ,zenburn-green+1)))))
+   `(which-func ((,class (:foreground ,zenburn-green+4)))))
 
   ;;; custom theme variables
   (custom-theme-set-variables

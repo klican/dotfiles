@@ -29,7 +29,7 @@ urxvtd -q -f -o &
 #wicd-client &
 mpd ~/.mpd/mpd.conf 
 (sleep 3 && emacs --daemon) &
-#dropboxd &
+dropboxd &
 #(sleep 4.5 && pytyle2) &
 #(sleep 3 && devmon ) &
 #xcompmgr & 

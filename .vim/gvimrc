@@ -7,6 +7,11 @@ set guifont=Envy\ Code\ R\ 10
 "set guifont=Inconsolata-g\ 10
 colorscheme darkburn
 
+"Smooth scrolling
+"If you like the scrolling to go a bit smoother, you can use these mappings:
+":map <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+":map <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+
 set grepprg=grep\ -nH\ $* "vim-latex post-install recommendation
 let g:tex_flavor = "latex" "vim-latex post-install recommendation
 let g:TeX_Menus = 1

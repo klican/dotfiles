@@ -344,7 +344,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
+ '(custom-safe-themes (quote ("8465bf2aa97d7348a090ce2fc3c9d9baa8c2db24457522c4c644566958b72298" "6938c51c0a89f078c61b979af23ae4c32204458f16a6a08c1a683ab478a7bc6b" "19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
  '(org-agenda-files (quote ("/tmp/shit.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -442,3 +442,20 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (add-hook 'LaTeX-mode-hook 'zotexo-minor-mode)
 (add-hook 'org-mode-hook 'zotexo-minor-mode)
 
+
+(setq org-latex-to-pdf-process
+   '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+;; Enables referencing in style [[Chapter name]] 
+(setq org-export-latex-hyperref-format "\\ref{%s}") 
+
+;; PDFs visited in Org-mode are opened in Evince (and other file extensions are handled according to the defaults)
+(add-hook 'org-mode-hook
+      '(lambda ()
+         (setq org-file-apps
+           '((auto-mode . emacs)
+             ("\\.mm\\'" . default)
+             ("\\.x?html?\\'" . default)
+             ("\\.pdf\\'" . "zathura %s")))))
