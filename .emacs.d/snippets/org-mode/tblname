@@ -1,0 +1,4 @@
+#name : tblname
+#contributor : Rick Moynihan <rick@sourcesmouth.co.uk>
+# --
+#+tblname: ${1}

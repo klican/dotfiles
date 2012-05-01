@@ -290,9 +290,6 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 ;; do not ask me for confirmation on C-c C-c
 (setq org-confirm-babel-evaluate nil)
 
-(setq org-default-notes-file (concat org-directory "/notes.org"))
-(define-key global-map "\C-cc" 'org-capture)
-
 ;-- LaTeX config begin
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
@@ -413,7 +410,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("d9d7a7c76f3d552f1c6da90736dd818b9423ad1e6047feeb8e1851a1b5191420" "7ec2d1c73249c206cce9ebcadee61dc5469b566eea1fe095b78273c96f28c0ca" "8465bf2aa97d7348a090ce2fc3c9d9baa8c2db24457522c4c644566958b72298" "6938c51c0a89f078c61b979af23ae4c32204458f16a6a08c1a683ab478a7bc6b" "19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
- '(org-agenda-files (quote ("/tmp/shit.org"))))
+ '(org-agenda-files (quote ("~/writings/management-onkologia/onkologia-management.org" "/tmp/shit.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -575,3 +572,70 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
   "K" 'magit-discard-item
   "l" 'magit-key-mode-popup-logging
   "h" 'magit-toggle-diff-refine-hunk)
+
+;; byte-compile .emacs everytime the file is saved
+(defun byte-compile-user-init-file ()
+(let ((byte-compile-warnings '(unresolved)))
+;; Useful if compilation fails.
+(when (file-exists-p (concat user-init-file ".elc"))
+(delete-file (concat user-init-file ".elc")))
+(byte-compile-file user-init-file)
+(message "%s compiled" user-init-file)))
+
+
+;Hide blank lines between headlines in collapsed views
+(setq org-cycle-separator-lines 2)
+
+;The following setting prevents creating blank lines before headings but
+;allows list items to adapt to existing blank line behaviour:
+(setq org-blank-before-new-entry (quote ((heading)
+                                         (plain-list-item . auto))))
+
+(setq org-table-export-default-format "orgtbl-to-csv")
+
+;(set-face-attribute 'default nil :font "Anonymous Pro 16")
+
+(define-key global-map "\C-cc" 'org-capture)
+(setq org-directory "~/writings")
+(setq org-default-notes-file "/notes.org")
+
+(setq org-capture-templates
+      (quote (("m" "Musings" entry (file+datetree "~/writings/notes/musings.org")
+	       "* %? %^G \n\nEntered on %T\n")
+	      )))
+
+;	      ("a" "Administration of system" entry (file+datatree "~/writings/notes/admin.org")
+;	       "Added: %T")
+;	      ("d" "Diary" entry (file+datatree "~/writings/notes/diary.org")
+;	       "Added: %T")
+;	      ("n" "Notes to remember" entry (file+datatree "~/writings/notes/notes.org")
+;	       "* %^{Description} %^G
+;Added: %T
+;	       %?"))))
+
+
+
+;'(org-capture-templates 
+;(quote (
+;("a" "Appointment" entry (file+headline 
+;"~/writings/notes/calendar.org" "Calendar") "* APPT %^{Description} %^g
+;%?
+;Added: %U") 
+;
+;("n" "Notes" entry (file+datetree 
+;"~/writings/notes/notes.org") "* %^{Description} %^g %? 
+;Added: %U") 
+;
+;("t" "Task Diary" entry (file+datetree 
+;"~/writings/notes/taskdiary.org") "* TODO %^{Description}  %^g
+;%?
+;Added: %U") 
+;
+;("j" "Journal" entry (file+datetree 
+;"~/writings/notes/journal.org") "** %^{Heading}")  
+;
+;("l" "Log Time" entry (file+datetree 
+;"~/writings/notes/logtime.org" ) "** %U - %^{Activity}  :TIME:")
+;)))
+
+

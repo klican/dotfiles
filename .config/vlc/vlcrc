@@ -2241,6 +2241,14 @@ skins2-transparency=1
 
 [access_udp] # UDP input
 
+[cdda] # Audio CD input
+
+# CDDB Server (string)
+#cddb-server=freedb.videolan.org
+
+# CDDB port (integer)
+#cddb-port=80
+
 [access_vdr] # VDR recordings
 
 # Chapter offset in ms (integer)
@@ -2383,6 +2391,17 @@ skins2-transparency=1
 
 # Samplerate (integer)
 #alsa-samplerate=48000
+
+[access_smb] # SMB input
+
+# SMB user name (string)
+#smb-user=
+
+# SMB password (string)
+#smb-pwd=
+
+# SMB domain (string)
+#smb-domain=
 
 [linsys_sdi] # SDI Input
 
@@ -2540,6 +2559,11 @@ skins2-transparency=1
 
 # v4l2 driver controls (string)
 #v4l2-set-ctrls=
+
+[libbluray] # Blu-Ray Disc support (libbluray)
+
+# Bluray menus (boolean)
+#bluray-menu=0
 
 [access_shm] # Shared memory framebuffer
 
@@ -3396,7 +3420,7 @@ freetype-color=12632256
 #audio=1
 
 # Default audio volume (integer)
-volume=428
+volume=396
 
 # Audio output volume step (integer)
 #volume-step=32
@@ -4589,17 +4613,9 @@ key-vol-down=Ctrl+j
 # Playlist bookmark 10 (string)
 #bookmark10=
 
-[cdda] # Audio CD input
 [fluidsynth] # FluidSynth MIDI synthesizer
 # Sound fonts (string)
 #soundfont=
-[access_smb] # SMB input
-# SMB user name (string)
-#smb-user=
-# SMB password (string)
-#smb-pwd=
-# SMB domain (string)
-#smb-domain=
 [media_library] # Media Library based on a SQL based database
 # Filename of the SQLite database (string)
 #ml-filename=vlc-media-library.db
