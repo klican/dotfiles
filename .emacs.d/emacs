@@ -426,7 +426,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 
 (add-to-list 'org-export-latex-classes
              '("koma-article"
-               "\\documentclass[paper=a4,fontsize=12pt]{scrartcl}"
+               "\\documentclass[paper=a4,fontsize=11pt]{scrartcl}"
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
@@ -445,7 +445,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 
 (add-to-list 'org-export-latex-classes
              '("koma-report"
-               "\\documentclass[paper=a4,fontsize=12pt]{scrreprt}"
+               "\\documentclass[paper=a4,fontsize=11pt]{scrreprt}"
                ("\\chapter{%s}" . "\\chapter*{%s}")
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
@@ -509,8 +509,8 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 
 
 (setq org-latex-to-pdf-process
-   '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+   '(;"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+     ;"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
      "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 ;; Enables referencing in style [[Chapter name]] 

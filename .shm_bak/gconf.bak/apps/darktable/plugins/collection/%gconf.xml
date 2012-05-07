@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="rating" mtime="1313062973" type="int" value="-1"/>
-	<entry name="query_flags" mtime="1313062973" type="int" value="7"/>
-	<entry name="filter_flags" mtime="1313062973" type="int" value="0"/>
-	<entry name="film_id" mtime="1313062973" type="int" value="1"/>
-</gconf>

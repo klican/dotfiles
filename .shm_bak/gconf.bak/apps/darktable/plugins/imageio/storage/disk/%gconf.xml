@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="file_directory" mtime="1313062374" type="string">
-		<stringvalue>$(FILE_DIRECTORY)/darktable_exported/img_$(SEQUENCE)</stringvalue>
-	</entry>
-</gconf>

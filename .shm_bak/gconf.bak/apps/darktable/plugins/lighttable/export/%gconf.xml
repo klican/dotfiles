@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="expanded" mtime="1313063053" type="bool" value="false"/>
-	<entry name="iccintent" mtime="1313062374" type="int" value="-1"/>
-	<entry name="format" mtime="1313062374" type="int" value="1"/>
-	<entry name="storage" mtime="1313062374" type="int" value="0"/>
-</gconf>

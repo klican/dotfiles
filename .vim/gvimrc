@@ -21,6 +21,6 @@ let g:Tex_NestElementMenu = 1
 let g:Tex_PackagesMenu = 1 
 let g:Tex_UseUtfMenus = 1
 
-au BufWritePost *.tex silent call Tex_CompileLatex()
+"au BufWritePost *.tex silent call Tex_CompileLatex() "compile once on :w
 
 "set textwidth=80 "Zadáte-li nenulovou hodnotu, bude Vim „hlídat“ pravý okraj a kdykoli dojde k jeho překročení, přesune při psaní aktuální slovo na začátek nového řádku.

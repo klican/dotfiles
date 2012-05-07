@@ -48,7 +48,7 @@ layouts = {
 
 -- {{{ Tags
 tags = {
-  names  = { "www", "vim", "term", "pdf", "doc",6, 7, "foo", "mm" },
+  names  = { "www", "txt", "term", "pdf", "doc",6, 7, "foo", "mm" },
   layout = { layouts[1], layouts[2], layouts[1], layouts[2], layouts[1],
              layouts[1], layouts[1], layouts[2], layouts[1]
 }}

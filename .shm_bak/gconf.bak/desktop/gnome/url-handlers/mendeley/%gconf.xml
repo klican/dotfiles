@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="enabled" mtime="1329008612" type="bool" value="true"/>
-	<entry name="command" mtime="1329008612" type="string">
-		<stringvalue>/home/lelio/.local/share/mendeleydesktop %s</stringvalue>
-	</entry>
-</gconf>
