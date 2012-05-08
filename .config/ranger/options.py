@@ -18,10 +18,10 @@ from ranger.api.options import *
 
 # Load the deault rc.conf file?  If you've copied it to your configuration
 # direcory, then you should deactivate this option.
-load_default_rc = False
+load_default_rc = True
 
 # How many columns are there, and what are their relative widths?
-column_ratios = (2, 4, 4)
+column_ratios = (2, 3, 4)
 
 # Which files should be hidden?  Toggle this by typing `zh' or
 # changing the setting `show_hidden'
@@ -59,17 +59,17 @@ save_console_history = True
 
 # Draw borders around columns?
 draw_borders = False
-draw_bookmark_borders = False
+draw_bookmark_borders = True
 
 # Display the directory name in tabs?
-dirname_in_tabs = True
+dirname_in_tabs = False
 
 # Enable the mouse support?
-mouse_enabled = False
+mouse_enabled = True
 
 # Display the file size in the main column or status bar?
 display_size_in_main_column = True
-display_size_in_status_bar = True
+display_size_in_status_bar = False
 
 # Display files tags in all columns or only in main column?
 display_tags_in_all_columns = True
@@ -108,6 +108,7 @@ autosave_bookmarks = True
 # command :get_cumulative_size or typing "dc".  The size is expensive to
 # calculate and will not be updated automatically.  You can choose
 # to update it automatically though by turning on this option:
+#autoupdate_cumulative_size = False
 autoupdate_cumulative_size = True
 
 # Makes sense for screen readers:

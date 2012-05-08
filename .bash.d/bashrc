@@ -74,6 +74,7 @@ man() {
 }
 
 export EDITOR="vim"
+export EDITOR=vim
 export PAGER="less"
 set -o vi
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after  #that's for fetching the vim-latex files
