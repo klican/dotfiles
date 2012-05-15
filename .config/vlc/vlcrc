@@ -2241,14 +2241,6 @@ skins2-transparency=1
 
 [access_udp] # UDP input
 
-[cdda] # Audio CD input
-
-# CDDB Server (string)
-#cddb-server=freedb.videolan.org
-
-# CDDB port (integer)
-#cddb-port=80
-
 [access_vdr] # VDR recordings
 
 # Chapter offset in ms (integer)
@@ -2391,17 +2383,6 @@ skins2-transparency=1
 
 # Samplerate (integer)
 #alsa-samplerate=48000
-
-[access_smb] # SMB input
-
-# SMB user name (string)
-#smb-user=
-
-# SMB password (string)
-#smb-pwd=
-
-# SMB domain (string)
-#smb-domain=
 
 [linsys_sdi] # SDI Input
 
@@ -2559,11 +2540,6 @@ skins2-transparency=1
 
 # v4l2 driver controls (string)
 #v4l2-set-ctrls=
-
-[libbluray] # Blu-Ray Disc support (libbluray)
-
-# Bluray menus (boolean)
-#bluray-menu=0
 
 [access_shm] # Shared memory framebuffer
 
@@ -4613,6 +4589,21 @@ key-vol-down=Ctrl+j
 # Playlist bookmark 10 (string)
 #bookmark10=
 
+[cdda] # Audio CD input
+# CDDB Server (string)
+#cddb-server=freedb.videolan.org
+# CDDB port (integer)
+#cddb-port=80
+[access_smb] # SMB input
+# SMB user name (string)
+#smb-user=
+# SMB password (string)
+#smb-pwd=
+# SMB domain (string)
+#smb-domain=
+[libbluray] # Blu-Ray Disc support (libbluray)
+# Bluray menus (boolean)
+#bluray-menu=0
 [fluidsynth] # FluidSynth MIDI synthesizer
 # Sound fonts (string)
 #soundfont=
