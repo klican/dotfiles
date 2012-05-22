@@ -6,6 +6,19 @@ set guioptions+=ac
 set guifont=Envy\ Code\ R\ 10
 "set guifont=Inconsolata-g\ 10
 colorscheme darkburn
+" toggle hex color syntax highlighting
+if exists('*HexHighlight()')
+  nmap <leader>h :call HexHighlight()<Return>
+endif
+
+" Show syntax highlighting groups for word under cursor
+nmap <leader>g :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 "Smooth scrolling
 "If you like the scrolling to go a bit smoother, you can use these mappings:

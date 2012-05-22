@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Orta
+Comment=A new take on Azel
+Encoding=UTF-8
+
+Name[en_US]=Orta
+
+[X-GNOME-Metatheme]
+GtkTheme=Orta
+MetacityTheme=Orta
+IconTheme=Faenza-Dark
+CursorTheme=oxy-white
+ButtonLayout=close,minimize,maximize:menu

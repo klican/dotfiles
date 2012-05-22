@@ -1,5 +1,4 @@
 "1.0b7pre-hg6239-default "(created 2011/07/02 23:19:21)"
-
 loadplugins '\.(js|penta)$'
 group user
 highlight Hint font: bold 13.5px "DejaVu Sans Mono", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black; text-transform: uppercase;
@@ -10,6 +9,7 @@ map -modes=n,v j <count>8<C-e>
 map -modes=n,v k <count>8<C-y>
 map <C-o> H
 map <C-i> L
+"set complete+=l
 set guioptions=bCs
 set hintkeys=asdfghjklzxcvmwertyuiop
 

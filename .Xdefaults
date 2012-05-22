@@ -2,7 +2,7 @@
 Rxvt.font: xft:Envy Code R:style=Regular:size=10:antialias=true
 URxvt*jumpScroll:               True
 URxvt*depth:                    32
-URxvt*transparent:              True
+#URxvt*transparent:              True
 URxvt*cursorColor:              grey
 URxvt*loginShell:               False
 URxvt*visualBell:               False
@@ -19,7 +19,7 @@ URxvt*fading:                   0
 URxvt*shading:                  100
 URxvt*perl-ext:                 matcher
 URxvt*urlLauncher:              firefox
-URxvt*background:               rgba:0000/0000/0000/aaaa
+#URxvt*background:               rgba:0000/0000/0000/aaaa
 ! urxvt-keyboard-select
 URxvt.perl-ext-common:  default,keyboard-select
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
@@ -46,37 +46,79 @@ URxvt.keysym.M-slash:  perl:aAtt:complete
 ! color14    cyan
 ! color15    white
 
-!URxvt*foreground:    green
-!URxvt*cursorColor:   #59B52B
-URxvt*colorBD:          #EEEEEF
-! Blue
-!URxvt*color4:           #3863ba
-!URxvt*color12:          #4F6FAE
+!!URxvt*foreground:    green
+!!URxvt*cursorColor:   #59B52B
+!URxvt*colorBD:          #EEEEEF
+!! Blue
+!!URxvt*color4:           #3863ba
+!!URxvt*color12:          #4F6FAE
+!
+!!!!zenburn!!!
+!!URxvt*background: #3f3f3f
+!!URxvt*foreground: #dcdccc
+!URxvt*foreground: #E6E6E6
+!URxvt*cursorColor: #aaaaaa
+!URxvt*colorUL: #366060
+!URxvt*underlineColor: #dfaf8f
+!URxvt*color0: #3f3f3f
+!URxvt*color1: #cc9393
+!URxvt*color2: #7f9f7f
+!URxvt*color3: #d0bf8f
+!URxvt*color4: #6ca0a3
+!URxvt*color5: #dc8cc3
+!URxvt*color6: #93e0e3
+!URxvt*color7: #dcdccc
+!URxvt*color8: #000000
+!URxvt*color9: #dca3a3
+!URxvt*color10: #bfebbf
+!URxvt*color11: #f0dfaf
+!URxvt*color12: #8cd0d3
+!URxvt*color13: #dc8cc3
+!URxvt*color14: #93e0e3
+!URxvt*color15: #ffffff
+!!!!zenburn!!!
 
-!!!zenburn!!!
-!URxvt*background: #3f3f3f
-!URxvt*foreground: #dcdccc
-URxvt*foreground: #E6E6E6
-URxvt*cursorColor: #aaaaaa
-URxvt*colorUL: #366060
-URxvt*underlineColor: #dfaf8f
-URxvt*color0: #3f3f3f
-URxvt*color1: #cc9393
-URxvt*color2: #7f9f7f
-URxvt*color3: #d0bf8f
-URxvt*color4: #6ca0a3
-URxvt*color5: #dc8cc3
-URxvt*color6: #93e0e3
-URxvt*color7: #dcdccc
-URxvt*color8: #000000
-URxvt*color9: #dca3a3
-URxvt*color10: #bfebbf
-URxvt*color11: #f0dfaf
-URxvt*color12: #8cd0d3
-URxvt*color13: #dc8cc3
-URxvt*color14: #93e0e3
-URxvt*color15: #ffffff
-!!!zenburn!!!
+!BLK Cursor
+URxvt.color0      : #000d18
+URxvt.color8      : #000d18
+
+!RED Tag
+URxvt.color1      : #e89393
+URxvt.color9      : #e89393
+
+!GRN SpecialKey
+URxvt.color2      : #9ece9e
+URxvt.color10     : #9ece9e
+
+!YEL Keyword
+URxvt.color3      : #f0dfaf
+URxvt.color11     : #f0dfaf
+
+!BLU Number
+URxvt.color4      : #8cd0d3
+URxvt.color12     : #8cd0d3
+
+!MAG Precondit
+URxvt.color5      : #c0bed1
+URxvt.color13     : #c0bed1
+
+!CYN Float
+URxvt.color6      : #dfaf8f
+URxvt.color14     : #dfaf8f
+
+!WHT Search
+URxvt.color7      : #efefef
+URxvt.color15     : #efefef
+
+!TXT Normal, Normal, Cursor
+URxvt.background  : #1f1f1f
+URxvt.foreground  : #dcdccc
+URxvt.cursorColor : #8faf9f
+
+!HLT Include, StatusLine, ErrorMsg
+URxvt.colorBD     : #ffcfaf
+URxvt.colorUL     : #ccdc90
+URxvt.colorIT     : #80d4aa
 
 /* 
  *      xft config

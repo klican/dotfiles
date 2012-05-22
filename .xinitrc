@@ -63,4 +63,5 @@ stardict &
 #firefox &
 
 
-exec ck-launch-session awesome 
+#exec ck-launch-session awesome 
+exec awesome 

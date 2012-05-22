@@ -377,6 +377,9 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (setq x-stretch-cursor t) ;; cursor will be as wide as tab character for example
 
 
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/dict")
+(ac-config-default)
 
 (require 'auto-complete-extension)
 
@@ -508,10 +511,8 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (add-hook 'org-mode-hook 'zotexo-minor-mode)
 
 
-(setq org-latex-to-pdf-process
-   '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+(setq org-latex-to-pdf-process (list "latexmk -f -pdf %f"))
+
 
 ;; Enables referencing in style [[Chapter name]] 
 (setq org-export-latex-hyperref-format "\\ref{%s}") 

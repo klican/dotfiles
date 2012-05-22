@@ -99,8 +99,11 @@ alias lr='ls -lR'          # recursive ls
 alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 
 #alias du='du -kh'     # This makes a more readable output
-alias du='cdu -idh'    # Color Perl wrapper
-alias df='df -kTh'
+# color output 
+#alias du='cdu -idh'     # using new perl wrapper, the cdu
+#alias df='dfc -Th'    # Omit the -k which dfc probably don't know
+# also, the ls++ is installed: but it is not yet configured
+#alias diff='colordiff'
 
 #alias urxvtc-nondrop='urxvtc -fn "xft:terminus:pixelsize=12" -bg rgba:0000/0000/0000/bbbb"'
 
@@ -135,11 +138,10 @@ alias syu='pacman -Syyu'
 alias S='pacman -S'
 alias rsn='pacman -Rsn'
 alias y='yaourt'
+alias ^L=clear
 alias aur='yaourt -Syyu --aur'
 alias devel='yaourt -Syu --devel'
 alias grep='grep --colour=auto'
-alias ^L='clear'
-alias l='clear'
 #alias synctime='sudo ~/bin/synctime.sh'
 
 	#----------------------------------------
@@ -241,5 +243,7 @@ export PERL_LOCAL_LIB_ROOT="/home/lelio/perl5";
 export PERL_MB_OPT="--install_base /home/lelio/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/lelio/perl5";
 export PERL5LIB="/home/lelio/perl5/lib/perl5/x86_64-linux-thread-multi:/home/lelio/perl5/lib/perl5";
-export PATH="/home/lelio/perl5/bin:$PATH";
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+#export PATH="/home/lelio/perl4/bin:/usr/bin/vendor_perl:/usr/lib/cw:/usr/lib/colorgcc/bin:$PATH";
+#export PATH="/home/lelio/perl5/bin:/usr/lib/colorgcc/bin:$PATH";
+export PATH="/home/lelio/perl5/bin:$PATH";
