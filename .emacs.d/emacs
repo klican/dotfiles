@@ -304,6 +304,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 
 
 (require 'reftex)
+(global-auto-revert-mode t) ;auto-updating of .bib files
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
 (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
 
@@ -412,7 +413,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("d9d7a7c76f3d552f1c6da90736dd818b9423ad1e6047feeb8e1851a1b5191420" "7ec2d1c73249c206cce9ebcadee61dc5469b566eea1fe095b78273c96f28c0ca" "8465bf2aa97d7348a090ce2fc3c9d9baa8c2db24457522c4c644566958b72298" "6938c51c0a89f078c61b979af23ae4c32204458f16a6a08c1a683ab478a7bc6b" "19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
+ '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "d9d7a7c76f3d552f1c6da90736dd818b9423ad1e6047feeb8e1851a1b5191420" "7ec2d1c73249c206cce9ebcadee61dc5469b566eea1fe095b78273c96f28c0ca" "8465bf2aa97d7348a090ce2fc3c9d9baa8c2db24457522c4c644566958b72298" "6938c51c0a89f078c61b979af23ae4c32204458f16a6a08c1a683ab478a7bc6b" "19fd3e6933b3294bfb0acd8ab7d33f09a25fc2a6f4a82b558035afb8db6f44b2" "b0d34df9f6d9b7c5d1c8eb3b8a7d7205f0a618b9ecf4213812bf9ba776d37c3e" "1785ea7433f340eccfc702f0a11b3c6e34d079407d012a44cb17974159edbbbb" default)))
  '(org-agenda-files (quote ("~/writings/management-onkologia/onkologia-management.org" "/tmp/shit.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -531,7 +532,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 ;; ido makes competing buffers and finding files easier
 ;; http://www.emacswiki.org/cgi-bin/wiki/InteractivelyDoThings
 (ido-mode 1)
-;(setq ido-everywhere t)
+(setq ido-everywhere t)
 (ido-mode 'both) ;; for buffers and files
 (setq 
   ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
@@ -541,6 +542,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
   ido-file-extensions-order '(".org" ".tex" ".txt" ".emacs" ".el")
   ido-work-directory-list '("~/" "~/.config" "~/documents" "~/downloads" "~/writings/")
   ido-case-fold  t                 ; be case-insensitive
+  ido-create-new-buffer 'prompt
 
   ido-enable-last-directory-history t ; remember last used dirs
   ido-max-work-directory-list 35   ; should be enough

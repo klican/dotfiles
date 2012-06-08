@@ -83,6 +83,7 @@ auto  #auctex's shit
 /.emacs.d/el-get
 /.emacs.d/cache
 /.emacs.d/ac-comphist.dat
+/.emacs.d/eshell/
 !/.emacs
 !/.fonts.conf
 !/.galculator

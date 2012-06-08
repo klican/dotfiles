@@ -55,7 +55,7 @@ stardict &
 #volti &
 #trayer --align right --edge top --transparent true --height 27 --alpha 120 --tint black --widthtype request --heighttype request --SetDockType true --SetPartialStrut false --expand true & 
 #stjerm mod alt key t opacity 65 font profont -fg 66ff11 autohide false height 250 &
-(sleep 1.5 && ~/bin/ctrltocaps.sh) &
+(sleep 2.2 && ~/bin/ctrltocaps.sh) &
 #kupfer &
 #tilda &
 #(sleep 2 && pidgin) &

@@ -54,6 +54,7 @@
 ; (gtk_accel_path "<Actions>/MenuActions/ZoomFitAlt1" "KP_Multiply")
 ; (gtk_accel_path "<Actions>/MenuActions/IntMark1" "")
 ; (gtk_accel_path "<Actions>/MenuActions/Zoom33" "")
+; (gtk_accel_path "<Actions>/MenuActionsExternal/gimp.desktop" "")
 ; (gtk_accel_path "<Actions>/MenuActions/About" "")
 ; (gtk_accel_path "<Actions>/MenuActions/Zoom50" "")
 ; (gtk_accel_path "<Actions>/MenuActions/GoMenu" "")
