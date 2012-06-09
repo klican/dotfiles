@@ -83,6 +83,7 @@ yasnippet
 
 ;Org-mode configure
 ;; The following lines are always needed. Choose your own keys.
+(setq org-modules '(org-toc)) ;now learn shortcuts how to use it!
 (require 'org-exp-blocks)
 (require 'org-special-blocks)
 (setq org-startup-indented t)

@@ -2,14 +2,14 @@
 
 
 #~/bin/pack_gvfs.sh
-~/bin/pack_gconf.sh
-~/bin/pack_gconfd.sh
+#~/bin/pack_gconf.sh
+#~/bin/pack_gconfd.sh
 #~/bin/pack_purple.sh
-~/bin/pack_Skype.sh
-~/bin/pack_pentadactyl.sh
-~/bin/pack_macromedia.sh
-~/bin/pack_adobe.sh
-~/bin/pack_google-googletalkplugin.sh
+#~/bin/pack_Skype.sh
+#~/bin/pack_pentadactyl.sh
+#~/bin/pack_macromedia.sh
+#~/bin/pack_adobe.sh
+#~/bin/pack_google-googletalkplugin.sh
 #alsactl -f restore ~/.asoundrc
 
 #tmux attach
