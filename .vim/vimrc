@@ -14,6 +14,7 @@ set shiftwidth =4 " The '>>' and '<<' command will indent by 4 spaces
 set cindent
 set nocompatible "turn off backward compatibility with the historic vi editor
 set t_Co=256
+set encoding=utf-8
 syntax enable
 autocmd Filetype tex setlocal nofoldenable
 "colorscheme wombat
@@ -169,6 +170,7 @@ endif
 set clipboard=unnamed ""doesn't need to type "* (like in "*p), when using clipboard
 
 " for vim-powerline
+let g:Powerline_symbols = 'fancy'
     set nocompatible   " Disable vi-compatibility
     set laststatus=2   " Always show the statusline
     set encoding=utf-8 " Necessary to show unicode glyphs

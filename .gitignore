@@ -10,7 +10,7 @@
 
 #Below are temporall LaTeX files 
 *.prv #auctex's shit
-auto  #auctex's shit
+*auto/  #auctex's shit - git is still including that! So how to ignore directories?
 *.aux
 *.bbl
 *.blg
