@@ -1,0 +1,24 @@
+#After quit ranger writes in "bookmarks" automatically the last accessed
+#directory. This is causing git to permanently show an unstaged change
+#because of this one line so ~/.config/bookmarks file is now ignored by
+#git.
+#This backup file is not used by ranger, but is tracked by git for my
+#manual changes. If I manually add a new bookmark here, I have just to make
+#a new copy of this file and substitute it for ranger's  "bookmarks" file.
+
+E:/etc
+D:/home/lelio/downloads
+M:/media
+e:/home/lelio/documents/ebooks
+d:/home/lelio/documents
+':/home/lelio
+f:/home/lelio/downloads/torrents/finished
+k:/media/VoyagerMini
+m:/home/lelio/music
+l:/home/lelio/documents/ebooks/latex
+q:/home/lelio
+p:/home/lelio/pictures
+s:/home/lelio/documents/2roc
+w:/home/lelio/writings
+v:/home/lelio/videos
+x:/home/lelio/Dropbox/PHARMACISTS

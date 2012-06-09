@@ -46,8 +46,14 @@ auto  #auctex's shit
 !/.config/transmission/
 /.config/transmission/*
 !/.config/transmission/settings.json
+!/.config/vlc/
+/.config/vlc/*
+!/.config/vlc/vlcrc
+/.config/Trolltech.conf
+/.config/Unknown\ Organization.conf
 /.config/ranger/__pycache__
 /.config/ranger/history
+/.config/ranger/bookmarks
 !/.vim
 /.vim/*
 !/.vim/gvimrc
