@@ -1,6 +1,6 @@
 -- {{{ License
 --
--- Awesome configuration, using awesome 3.4.10 on Arch GNU/Linux
+-- Awesome configuration, using awesome 3.4.13 on Arch GNU/Linux
 --   * Adrian C. <anrxc@sysphere.org>
 
 -- Screenshot: http://sysphere.org/gallery/snapshots
@@ -49,8 +49,8 @@ layouts = {
 -- {{{ Tags
 tags = {
   names  = { "www", "txt", "term", "pdf", "doc",6, 7, "foo", "mm" },
-  layout = { layouts[1], layouts[2], layouts[1], layouts[2], layouts[1],
-             layouts[1], layouts[1], layouts[2], layouts[1]
+  layout = { layouts[1], layouts[2], layouts[2], layouts[2], layouts[1],
+             layouts[2], layouts[2], layouts[2], layouts[1]
 }}
 
 for s = 1, scount do
