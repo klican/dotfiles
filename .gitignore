@@ -46,15 +46,14 @@
 !/.config/transmission/
 /.config/transmission/*
 !/.config/transmission/settings.json
-!/.config/vlc/
 /.config/vlc/*
-!/.config/vlc/vlcrc
 /.config/Trolltech.conf
 /.config/Unknown\ Organization.conf
 /.config/ranger/__pycache__
 /.config/ranger/history
 /.config/ranger/bookmarks
 /.config/nitrogen/*
+/.config/gtk-2.0/*
 !/.vim
 /.vim/*
 !/.vim/gvimrc
@@ -95,7 +94,6 @@
 /.emacs.d/eshell/
 !/.emacs
 !/.fonts.conf
-!/.galculator
 !/.gitconfig
 !/.gitmodules
 !/.gitignore
