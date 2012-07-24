@@ -43,9 +43,7 @@
 !/.config
 /.config/.libreoffice
 /.config/libreoffice
-!/.config/transmission/
 /.config/transmission/*
-!/.config/transmission/settings.json
 /.config/vlc/*
 /.config/Trolltech.conf
 /.config/Unknown\ Organization.conf
