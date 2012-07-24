@@ -43,7 +43,7 @@ unclutter -grab &
 trayfreq &
 #setxkbmap -option grp:switch,grp:shifts_toggle,grp_led:scroll us,sk,vok_sk &
 (sleep 2 && xbindkeys) &
-setxkbmap -layout vok_sk -variant basic &
+setxkbmap -layout vok_sk -variant basic -option ctrl:nocaps &
 xset r rate 200 32 &
 #(sleep 1 && fbxkb) &
 #clipit &
@@ -55,13 +55,11 @@ stardict &
 #volti &
 #trayer --align right --edge top --transparent true --height 27 --alpha 120 --tint black --widthtype request --heighttype request --SetDockType true --SetPartialStrut false --expand true & 
 #stjerm mod alt key t opacity 65 font profont -fg 66ff11 autohide false height 250 &
-(sleep 2.2 && ~/bin/ctrltocaps.sh) &
 #kupfer &
 #tilda &
 #(sleep 2 && pidgin) &
 #(sleep 4 && skype) &
 #firefox &
-
 
 #exec ck-launch-session awesome 
 exec awesome 
