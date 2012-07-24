@@ -29,12 +29,12 @@ auto-complete-chunk
 auto-complete-latex
 auto-complete-yasnippet
 auctex 
-;ido-ubiquitous
-;ido-yes-or-no
-;idomenu
+ido-ubiquitous
+ido-yes-or-no
+idomenu
 ;ido-hacks ;; breaks ido <21.apr.2012>
 smex
-;cdlatex-mode ;; that's a major mode, has it a lighter version, cdlatex-minor??
+cdlatex-mode ;; that's a major mode, has it a lighter version, cdlatex-minor??
 reftex
 deft
 evil-leader
