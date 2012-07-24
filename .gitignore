@@ -62,7 +62,9 @@
 /.mpd/*
 !/.mpd/mpd.conf
 !/.mpd/playlists
-!/.ncmpcpp
+/.ncmpcpp*
+!/.ncmpcpp/config
+!/.ncmpcpp/keys
 !/.orta
 !/.stardict
 !/.themes
