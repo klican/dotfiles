@@ -1,12 +1,17 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"endif
-colorscheme darkburn
+if &t_Co < 256
+    colorscheme miro8   " colourscheme for the 8 colour linux term
+else
+    colorscheme darkburn
+" for vim-powerline
+let g:Powerline_symbols = 'fancy'
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
+endif
+
 
 filetype plugin on
 filetype plugin indent on "Turn on file type detection
@@ -169,9 +174,4 @@ endif
 
 set clipboard=unnamed ""doesn't need to type "* (like in "*p), when using clipboard
 
-" for vim-powerline
-let g:Powerline_symbols = 'fancy'
-    set nocompatible   " Disable vi-compatibility
-    set laststatus=2   " Always show the statusline
-    set encoding=utf-8 " Necessary to show unicode glyphs
 
