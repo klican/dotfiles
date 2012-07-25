@@ -55,6 +55,7 @@
 /.config/gtk-2.0/*
 !/.vim
 /.vim/*
+!/.vim/bundle
 !/.vim/gvimrc
 !/.vim/vimrc
 !/.mpd
