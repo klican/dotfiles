@@ -82,6 +82,7 @@
 #!/.pentadactyl
 
 !/.Xdefaults
+!/.colors
 !/.aspell.sk.prepl
 !/.aspell.sk.pws
 !/.bash.d
