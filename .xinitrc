@@ -23,6 +23,7 @@ if which dbus-launch >/dev/null 2>&1 && test -z "$DBUS_SESSION_BUS_ADDRESS"; the
        eval `dbus-launch --sh-syntax --exit-with-session`
 fi
 
+xrdb ~/.Xdefaults &
 udiskie &
 xbacklight -set 25 &
 urxvtd -q -f -o &
