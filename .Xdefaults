@@ -62,4 +62,5 @@ Emacs.font: Envy Code R-10
 !#include "/home/lelio/.colors/rab"
 !#include "/home/lelio/.colors/reasons"
 !#include "/home/lelio/.colors/zenburn-jasonwryan"
-#include "/home/lelio/.colors/zenburn-moje"
+!#include "/home/lelio/.colors/zenburn-moje"
+#include "/home/lelio/.colors/solarized-stock"
