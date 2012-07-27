@@ -121,7 +121,7 @@
 "urxvtc"
     Control+Alt+Mod2 + u
 
-"urxvtc"
+"~/bin/urxvt-tmux.sh"
     Alt+Mod2 + u
 
 "urxvtc	-e ncmpcpp"
