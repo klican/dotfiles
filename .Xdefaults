@@ -1,5 +1,4 @@
-!URxvt*font:                     xft:terminus:size=12
-Rxvt.font: xft:Envy Code R:style=Regular:size=10:antialias=true
+! -- General -- !
 URxvt*jumpScroll:               True
 URxvt*depth:                    32
 #URxvt*transparent:              True
@@ -20,16 +19,19 @@ URxvt*shading:                  100
 URxvt*perl-ext:                 matcher
 URxvt*urlLauncher:              firefox
 #URxvt*background:               rgba:0000/0000/0000/aaaa
-! urxvt-keyboard-select
-URxvt.perl-ext-common:  default,keyboard-select
-URxvt.keysym.M-Escape:  perl:keyboard-select:activate
-URxvt.keysym.M-s:       perl:keyboard-select:search
-URxvt.perl-ext-common: ...,autocomplete-ALL-the-things
-URxvt.keysym.M-slash:  perl:aAtt:complete
 
-!!There starts configuration necessary for vim-powerline to work with this
-!font
-    URxvt.font:       [codeset=ASCII]xft:Envy Code R for Powerline:size=10,\
+! -- xft config -- !
+!Xft*dpi: 125
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.antialias: 1
+Emacs.font: Envy Code R-10
+
+! -- Use the Envy Code R font, and work properly with vim-powerline: -- !
+    URxvt.font:       [codeset=ASCII]xft:Envy Code R for Powerline:size=10:antialias=true,\
                       [codeset=ISO10646]xft:WenQuanYi Micro Hei:regular
     URxvt.boldFont:   [codeset=ASCII]xft:Envy Code R for Powerline:bold:size=10,\
                       [codeset=ISO10646]xft:WenQuanYi Micro Hei:bold
@@ -44,8 +46,6 @@ URxvt.keysym.M-slash:  perl:aAtt:complete
             \033]710;[codeset=ASCII]xft:Envy Code R for Powerline:size=10, [codeset=ISO10646]xft:WenQuanYi Micro Hei:regular\007 \
             \033]711;[codeset=ASCII]xft:Envy Code R for Powerline:bold:size=10, [codeset=ISO10646]xft:WenQuanYi Micro Hei:bold\007 \
             \033]712;[codeset=ASCII]xft:Envy Code R for Powerline:italic:size=10, [codeset=ISO10646]xft:WenQuanYi Micro Hei:italic\007
-!!There ends configuration necessary for vim-powerline to work with this
-!font
 
 ! Normal
 ! color0    black
