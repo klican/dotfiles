@@ -14,7 +14,7 @@ URxvt*cursorBlink:              False
 URxvt*saveLines:                1000
 URxvt*internalBorder:           0
 URxvt*borderLess:               False
-URxvt*termName:                 rxvt
+URxvt*termName:                screen-256color
 URxvt*fading:                   0
 URxvt*shading:                  100
 URxvt*perl-ext:                 matcher

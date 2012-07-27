@@ -58,6 +58,8 @@
 !/.vim/bundle
 !/.vim/gvimrc
 !/.vim/vimrc
+!/.tmux
+!/.tmux.conf
 !/.mpd
 /.mpd/*
 !/.mpd/mpd.conf
