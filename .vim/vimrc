@@ -28,6 +28,7 @@ set hidden "Handle multiple buffers better
 set linebreak
 set ruler "Show cursor position
 set number "Show line numbers
+set relativenumber "Line numbers relative to cursor actual position
 set ignorecase "Ignore case when searching
 set smartcase  "but case-sensitive if expression contais a capital letter
 
