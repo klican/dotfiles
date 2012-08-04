@@ -14,7 +14,7 @@ set guioptions=bCs
 set hintkeys=asdfghjklzxcvmwertyuiop
 
 " Set maximum numbers of completion items to display at once
-set maxitems=14
+set maxitems=16
 
 " vim: set ft=pentadactyl:
 
