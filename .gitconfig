@@ -21,6 +21,7 @@
     lg = log -p
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short #from gitimmersion.com/lab_11.html
     ls = ls-files
 
 # colors from: http://jblevins.org/log/git-colors
