@@ -52,7 +52,7 @@ syndaemon -t -k -i 1.5 -d &
 #clipit &
 #gvolwheel &
 #orage &
-stardict &
+stardict -h &
 #(sleep 2 && libreoffice -quickstart -nologo -nodefault) &
 #~/.scripts/xcompmgr COMP &
 #volti &
