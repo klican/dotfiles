@@ -46,6 +46,8 @@ trayfreq &
 (sleep 2 && xbindkeys) &
 setxkbmap -layout vok_sk -variant basic -option ctrl:nocaps &
 xset r rate 200 32 &
+# Disable touchpad while typing
+syndaemon -t -k -i 1.5 -d &
 #(sleep 1 && fbxkb) &
 #clipit &
 #gvolwheel &
