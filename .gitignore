@@ -51,7 +51,8 @@
 !/.config/zathura/*
 !/.vim
 /.vim/*
-!/.vim/bundle
+!/.vim/bundle/vundle
+!/.vim/vundle-plugin-list
 !/.vim/gvimrc
 !/.vim/vimrc
 !/.tmux
