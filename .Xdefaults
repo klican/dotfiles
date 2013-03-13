@@ -1,8 +1,8 @@
 ! -- General -- !
 URxvt*jumpScroll:               True
 URxvt*depth:                    32
-#URxvt*transparent:              True
-URxvt*cursorColor:              grey
+!URxvt*transparent:              True
+!URxvt*cursorColor:              grey
 URxvt*loginShell:               False
 URxvt*visualBell:               False
 URxvt*scrollBar:                False
@@ -18,10 +18,10 @@ URxvt*fading:                   0
 URxvt*shading:                  100
 URxvt*perl-ext:                 matcher
 URxvt*urlLauncher:              firefox
-#URxvt*background:               rgba:0000/0000/0000/aaaa
+!URxvt*background:               rgba:0000/0000/0000/aaaa
 
 ! -- xft config -- !
-!Xft*dpi: 125
+Xft*dpi: 96
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 Xft.autohint: 0
@@ -62,5 +62,5 @@ Emacs.font: Envy Code R-10
 !#include "/home/lelio/.colors/rab"
 !#include "/home/lelio/.colors/reasons"
 !#include "/home/lelio/.colors/zenburn-jasonwryan"
-#include "/home/lelio/.colors/zenburn-moje"
-!#include "/home/lelio/.colors/solarized-stock"
+!#include "/home/lelio/.colors/zenburn-moje"
+#include "/home/lelio/.colors/solarized-stock"

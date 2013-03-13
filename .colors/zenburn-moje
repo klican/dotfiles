@@ -2,6 +2,8 @@
 
 !TXT Normal, Normal, Cursor
 URxvt.background  : #1f1f1f
+!bg to match awesome titlebar
+URxvt.background  : #1f1f1f
 URxvt.foreground  : #dcdccc
 URxvt.cursorColor : #8faf9f
 
