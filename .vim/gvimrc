@@ -4,21 +4,7 @@ set guioptions-=m
 set guioptions+=ac  
 "set gfn=DejaVu\ Sans\ Mono\ Bold\ 10
 set guifont=Envy\ Code\ R\ 10
-"set guifont=Inconsolata-g\ 10
-colorscheme darkburn
-" toggle hex color syntax highlighting
-if exists('*HexHighlight()')
-  nmap <leader>h :call HexHighlight()<Return>
-endif
-
-" Show syntax highlighting groups for word under cursor
-nmap <leader>g :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+colorscheme solarized
 
 "Smooth scrolling
 "If you like the scrolling to go a bit smoother, you can use these mappings:
@@ -35,5 +21,3 @@ let g:Tex_PackagesMenu = 1
 let g:Tex_UseUtfMenus = 1
 
 "au BufWritePost *.tex silent call Tex_CompileLatex() "compile once on :w
-
-"set textwidth=80 "Zadáte-li nenulovou hodnotu, bude Vim „hlídat“ pravý okraj a kdykoli dojde k jeho překročení, přesune při psaní aktuální slovo na začátek nového řádku.

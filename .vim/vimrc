@@ -1,29 +1,26 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+syntax enable
+set t_Co=256
 if &t_Co < 256
     colorscheme miro8   " colourscheme for the 8 colour linux term
 else
-    colorscheme darkburn
-" for vim-powerline
-let g:Powerline_symbols = 'fancy'
+    colorscheme solarized
+endif
+" Toggle background modes for solarized colorscheme
+call togglebg#map("<Leader>bg")
+
+
+"Getting root permissions on a file inside of Vim:
+cmap w!! w !sudo tee >/dev/null %
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show unicode glyphs
-endif
-
-
 filetype plugin on
 filetype plugin indent on "Turn on file type detection
-set shiftwidth =4 " The '>>' and '<<' command will indent by 4 spaces
-set cindent
 set nocompatible "turn off backward compatibility with the historic vi editor
-set t_Co=256
-set encoding=utf-8
-syntax enable
+set encoding=utf-8 " Necessary to show unicode glyphs
 autocmd Filetype tex setlocal nofoldenable
-"colorscheme wombat
-set nocompatible
 set hidden "Handle multiple buffers better
 set linebreak
 set ruler "Show cursor position
@@ -31,54 +28,32 @@ set number "Show line numbers
 set relativenumber "Line numbers relative to cursor actual position
 set ignorecase "Ignore case when searching
 set smartcase  "but case-sensitive if expression contais a capital letter
-
-"This jumps to the middle of the actual line
-map gm :call cursor(0, virtcol('$')/2)<CR>
 set hlsearch "Highlight search things
-set incsearch "Highlight searched string as it's typed 
+set incsearch "Highlight searched string as it's typed
 set backspace=indent,eol,start "bez tohto bs maže znaky iba z aktuálne napísaného textu
 set scrolloff=2
-nmap <silent> <C-n> <Esc>:call ToggleHLSearch()<CR> 
-"Hovewer don't know exactly what previous line does :)
+" Get rid of annoying pause on terminal
+set timeout timeoutlen=1500 ttimeoutlen=0
+"set wildmenu "Enhanced command line completion
+"set wildmode=list:longest "Complete files like a shell
+set mouse=a    "Enable the use of the mouse
+" Easier micro-navigation in insert mode
+imap <C-b> <Left>
+imap <C-f> <Right>
+" zobrazuje priebezne zadavany prikaz
+" prinosne hl. pri viacznakovych prikazoch ako napr qg}
+set showcmd
+set textwidth=74
 
-set wildmenu "Enhanced command line completion
-set wildmode=list:longest "Complete files like a shell
-
-set mouse=a	   "Enable the use of the mouse
-set showcmd 	   
-"zobrazuje priebezne zadavany prikaz (prinosne hl. pri viacznakovych prikazoch ako napr qg})
-
-
-"set showmatch 	"zapíšete-li pravou závorku, ukáže vám k ní příslušející levou (krátce na ni poskočí kurzorem a zase se vrátí); hodně užitečné třeba pro TeXovské texty, které se hemží závorkami
-set textwidth=74 "Zadáte-li nenulovou hodnotu, bude Vim „hlídat“ pravý okraj a kdykoli dojde k jeho překročení, přesune při psaní aktuální slovo na začátek nového řádku.
- 
-" Smart mappings on the command line
-cno $h e ~/
-cno $d e ~/Desktop/
-cno $w e ~/writings/
-cno $j e ./
-cno $c e <C-\>eCurrentFileDir("e")<cr>
-" $q is super useful when browsing on the command line
-cno $q <C-\>eDeleteTillSlash()<cr>
-
-set spelllang=sk
-"set spell
-"Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-function NERDTreeToggle()
-  execute ":NERDTreeToggle"
-endfunction
-command -nargs=0 NERDTreeToggle :call NERDTreeToggle()
-nmap \nt :NERDTreeToggle<CR>
-
-function NERDTreeClose()
-  execute ":NERDTreeClose"
-endfunction
-command -nargs=0 NERDTreeClose :call NERDTreeClose()
-nmap \ntc :NERDTreeClose<CR>
-
-silent! call repeat#set("\<Plug>MyWonderfulMap", v:count) "initialize the repeat.vim
+"doesn't need to type "* (like in "*p), when using clipboard
+set clipboard=unnamed
+" Automatically retab before saving, converts tabs to spaces.
+au BufWritePre * :retab
+set expandtab      " enter spaces when tab is pressed
+set tabstop=4      " use 4 spaces to represent tab
+set softtabstop=4
+set shiftwidth =4  " The '>>' and '<<' command will indent by 4 spaces
+set autoindent     " copy indent from current line when starting a new line
 
 " Use ranger as vim file manager:
 "When <leader>r is pressed, ranger is launched with RANGER_RETURN_FILE
@@ -100,79 +75,74 @@ function! Ranger()
 endfunction
 nmap <leader>r :call Ranger()<cr>
 
-
- " Autocomplete already-existing words in the file with tab (extremely useful!)
-function InsertTabWrapper()
-      let col = col('.') - 1
-      if !col || getline('.')[col - 1] !~ '\k'
-          return "\<tab>"
-      else
-          return "\<c-p>"
-      endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr> 
-" duh, ignore this garbage made by the website:</cr></c-r></tab></c-p></tab>
-
-""___________________________________""
-"" Below goes experimental settings: ""
-"""""""""""""""""""""""""""""""""""""""
-if has("vms")
-  set nobackup          " do not keep a backup file, use versions instead
-else
-  set backup            " keep a backup file
-endif
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-set formatoptions +=2
-set endofline
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
-
-set clipboard=unnamed ""doesn't need to type "* (like in "*p), when using clipboard
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 
+""""""""""""""""""""""""
+" Plugin configuration "
+""""""""""""""""""""""""
+
+"vim-powerline
+let g:Powerline_symbols = 'fancy'
+
+" UndoTree
+map <leader>g :GundoToggle<CR>
+
+" NerdTree"
+map <leader>nt :NERDTreeToggle<CR>
+
+"Tagbar
+nmap <Leader>tg :TagbarToggle<CR>
+let g:tagbar_sort = 0
+
+" CtrlP.vim
+let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_match_window_bottom = 1
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+
+"initialize the repeat.vim
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
+" Neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
+" Syntastic
+let g:syntastic_mode_map = {'active_filetypes': ['python'] }
+let g:syntastic_python_checker = ['flake8', 'pylint']
+let syntastic_python_flake8_args = '--ignore=E501'
+let g:syntastic_auto_jump = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 4
+let g:syntastic_enable_highlighting = 1
+
+" vim-python-pep8-indent
+let g:pymode_indent = 0
+
+" Vimux
+" Height of vimux split pane
+let g:VimuxHeight = "30"
+" Run the current file in bpython2 shell
+autocmd FileType python map <LocalLeader>ll :call VimuxRunCommand(" clear; bpython2 -i " . bufname("%"))<CR>
+" Open python shell
+autocmd FileType python map <LocalLeader>ls :call VimuxRunCommand(" clear; bpython2 -i ")<CR>
+" If text is selected, save it in the v buffer and send that buffer it to tmux
+autocmd FileType python vmap <LocalLeader>lv "vy :call VimuxRunCommand(@v . "\n", 0)<CR>
+" Select current paragraph and send it to tmux
+autocmd FileType python nmap <LocalLeader>lv vip<LocalLeader>vs<CR>
+" Close vim tmux runner opened by VimuxRunCommand
+autocmd FileType python map <LocalLeader>lc :VimuxCloseRunner<CR>
