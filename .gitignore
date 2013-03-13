@@ -8,7 +8,7 @@
 *.exe
 *.EXE
 
-#Below are temporall LaTeX files 
+#Below are temporall LaTeX files
 *.prv #auctex's shit
 *auto/  #auctex's shit - git is still including that! So how to ignore directories?
 *.aux
@@ -39,20 +39,16 @@
 *.maf
 *.mtc
 *.mtc0
+
 #Include these directories
 !/.config
-/.config/.libreoffice
-/.config/libreoffice
-/.config/transmission/*
-/.config/vlc/*
-/.config/Trolltech.conf
-/.config/Unknown\ Organization.conf
-/.config/ranger/__pycache__
-/.config/ranger/colorschemes/__init__.py
-/.config/ranger/history
-/.config/ranger/bookmarks
-/.config/nitrogen/*
-/.config/gtk-2.0/*
+/.config/*
+!/.config/awesome/*
+!/.config/ranger/commands.py
+!/.config/ranger/rc.conf
+!/.config/ranger/rifle.conf
+!/.config/ranger/scope.sh
+!/.config/zathura/*
 !/.vim
 /.vim/*
 !/.vim/bundle
@@ -67,28 +63,14 @@
 /.ncmpcpp*
 !/.ncmpcpp/config
 !/.ncmpcpp/keys
-!/.orta
 !/.stardict
 !/.themes
 !/bin
-#shm
-/.shm_bak
-/.shm_bak/pentadactyl.bak/
-#!/.Skype
-#!/.adobe
-#!/.gconf
-#!/.gconfd
-#!/.macromedia
-#!/.pentadactyl
-
 !/.Xdefaults
 !/.colors
-!/.aspell.sk.prepl
-!/.aspell.sk.pws
 !/.bash.d
 /.bash.d/bash_history
 !/.bashrc
-!/.bash_login
 !/.emacs.d
 /.emacs.d/auto-save-list
 /.emacs.d/el-get
@@ -100,16 +82,11 @@
 !/.gitconfig
 !/.gitmodules
 !/.gitignore
-!/.gtk-bookmarks
-!/.gtkrc-2.0
-!/.gtkrc-2.0.mine
 !/.gvimrc
 !/.vimrc
 !/.pentadactylrc
 !/.profile
 !/.rtorrent.rc
-!/.screenrc
-!/.trayfreq.config
 !/.xbindkeysrc
 !/.xinitrc
 
