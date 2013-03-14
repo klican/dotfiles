@@ -13,6 +13,26 @@ map <C-i> L
 set guioptions=bCs
 set hintkeys=asdfghjklzxcvmwertyuiop
 
+""" begin Zotero item saving shortcuts """
+" Adds an item to the Zotero library from the current webpage
+" (equiv. to clicking on the little page/book ion in the FF address bar)
+map -js <C-A-s> Zotero_Browser.scrapeThisPage()
+" Save the current page as a webpage item in Zotero
+map -js <C-A-p> ZoteroPane.addItemFromPage()
+""" end Zotero item saving shortcuts   """
+
+"Put zotero icon in status bar
+javascript <<EOF
+(function(){
+    var zoteroPanel = document.createElement("statusbarpanel");
+    zoteroPanel.setAttribute("id", "zotero-panel-clone");
+    zoteroPanel.appendChild(document.getElementById("zotero-status-image"));
+    zoteroPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+    document.getElementById("status-bar")
+            .insertBefore(zoteroPanel, document.getElementById("security-button"));
+})();
+EOF
+
 " Set maximum numbers of completion items to display at once
 set maxitems=16
 
@@ -26,6 +46,3 @@ style "chrome://*" #appmenu-toolbar-button { display:none; }
 "hi HintElem             background-color: #222222; color: #f6e9e9;
 hi HintElem              background-color: ; color: ;
 
- map ú+ :js Zotero_Browser.scrapeThisPage(".")<CR>
-command zscrape js Zotero_Browser.scrapeThisPage(".");
-"command mendeley js onClick:document.getElementsByTagName('body')[0].appendChild(document.createElement('script')).setAttribute('src','http://www.mendeley.com/min.php/bookmarklet');
