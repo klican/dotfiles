@@ -1,5 +1,5 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+execute pathogen#infect()
 
 syntax enable
 set t_Co=256
@@ -25,6 +25,7 @@ set hidden "Handle multiple buffers better
 set linebreak
 set ruler "Show cursor position
 set number "Show line numbers
+set noshowmode
 set relativenumber "Line numbers relative to cursor actual position
 set ignorecase "Ignore case when searching
 set smartcase  "but case-sensitive if expression contais a capital letter
@@ -93,6 +94,7 @@ EOF
 """"""""""""""""""""""""
 
 "vim-powerline
+set rtp+=~/.powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
 " UndoTree
