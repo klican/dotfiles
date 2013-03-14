@@ -51,12 +51,13 @@
 !/.config/zathura/*
 !/.vim
 /.vim/*
-!/.vim/bundle/vundle
-!/.vim/vundle-plugin-list
+!/.vim/bundle
 !/.vim/gvimrc
 !/.vim/vimrc
 !/.tmux
 !/.tmux.conf
+!/.powerline
+!/.oh-my-zsh
 !/.mpd
 /.mpd/*
 !/.mpd/mpd.conf
