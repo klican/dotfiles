@@ -16,13 +16,14 @@ theme.wallpaper_cmd = { "/usr/bin/nitrogen --restore" } -- moved from .xinitrc
 
 -- {{{ Styles
 theme.font      = "profont 8"
+--theme.font      = "Envy Code R 9"
 
 -- {{{ Colors
 theme.fg_normal = "#DCDCCC"
 theme.fg_focus  = "#F0DFAF"
 theme.fg_urgent = "#CC9393"
 theme.bg_normal = "#3F3F3F"
-theme.bg_normal = "#212121"
+theme.bg_normal = "#1f1f1f"
 --theme.bg_focus  = "#1E2320"
 theme.bg_focus  = "#000000"
 theme.bg_urgent = theme.bg_normal
@@ -46,7 +47,7 @@ theme.fg_widget        = "#AECF96"
 theme.fg_center_widget = "#88A175"
 theme.fg_end_widget    = "#CC9393"
 --theme.fg_off_widget    = "#494B4F"
-theme.fg_off_widget    = "#212121"
+theme.fg_off_widget    = "#1f1f1f"
 theme.fg_netup_widget  = "#7F9F7F"
 theme.fg_netdn_widget  = theme.fg_urgent
 theme.bg_widget        = theme.bg_normal

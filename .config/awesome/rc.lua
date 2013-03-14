@@ -15,10 +15,9 @@ require("awful")
 require("awful.rules")
 require("awful.autofocus")
 -- User libraries
-require("vicious")
-require("scratch")
+vicious = require("vicious")
+scratch = require("scratch")
 require("revelation")
--- require("rodentbane")
 -- }}}
 
 
@@ -90,6 +89,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
             return '->| '.. args["{Artist}"]..' - '.. args["{Title}"]..' '
     end
     end, 1)
+
 
 -- {{{ CPU usage and temperature
 cpuicon = widget({ type = "imagebox" })
@@ -177,8 +177,8 @@ upicon.image = image(beautiful.widget_netup)
 netwidget = widget({ type = "textbox" })
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="'
-  .. beautiful.fg_netdn_widget ..'">${wlan0 down_kb}</span> <span color="'
-  .. beautiful.fg_netup_widget ..'">${wlan0 up_kb}</span>', 2)
+  .. beautiful.fg_netdn_widget ..'">${eth0 down_kb}</span> <span color="'
+  .. beautiful.fg_netup_widget ..'">${eth0 up_kb}</span>', 2)
 -- }}}
 
 ---- {{{ Mail subject
@@ -312,7 +312,9 @@ for s = 1, scount do
 --        separator, mailwidget, mailicon,
         separator, upicon, netwidget, dnicon,
 --        separator, pkgwidget, pkgicon, 
-        separator, fs.s.widget, fs.h.widget, fs.r.widget, fs.b.widget, fsicon,
+--
+--        /dev/sda4 | /dev/sda3 | /dev/sda2 | /dev/sda1 
+        separator, fs.b.widget, fs.h.widget, fs.r.widget, fs.s.widget, fsicon,
         separator, membar.widget, memicon,
         separator, batwidget, baticon,
         separator, tzswidget, cpugraph.widget, cpuicon,
@@ -569,8 +571,41 @@ awful.rules.rules = {
  maximized_horizontal = false,
 
 }
--- }}}
 
+---- {{{ Focus signal handlers
+--client.add_signal("focus", function (c) c.border_color = beautiful.border_focus end)
+--client.add_signal("unfocus", function (c) c.border_color = beautiful.border_normal end)
+---- }}}
+--
+---- {{{ Arrange signal handler
+--for s = 1, screen.count() do screen[s]:add_signal("arrange", function ()
+-- local clients = awful.client.visible(s)
+-- local layout = awful.layout.getname(awful.layout.get(s))
+--
+-- if #clients > 0 then -- Fine grained borders and floaters control
+-- for _, c in pairs(clients) do -- Floaters always have borders
+-- if 1 > 0 then
+---- if awful.client.floating.get(c) or layout == "floating" then
+-- c.border_width = beautiful.border_width
+--
+---- if not c.fullscreen then -- Floaters have titlebars
+---- if not c.titlebar and c.class ~= "Xmessage" then
+---- awful.titlebar.add(c, { modkey = modkey })
+---- end -- Floaters are always on top
+---- c.above = true
+---- end
+--
+-- -- No borders with only one visible client
+-- elseif #clients == 1 or layout == "max" then
+-- clients[1].border_width = 0
+-- else
+-- c.border_width = beautiful.border_width
+-- end
+-- end
+-- end
+-- end)
+--end
+---- }}}
 
 -- {{{ Signals
 --
