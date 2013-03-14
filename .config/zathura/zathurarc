@@ -1,4 +1,10 @@
-#set font "profont 8"
 set font "Envy Code R 9"
 map <F1> set "pages-per-row 1"
 map <F2> set "pages-per-row 2"
+set recolor-keephue "true"
+set default-bg "#1f1f1f"
+set statusbar-bg "#1f1f1f"
+set statusbar-fg "#dcdccc"
+set recolor-darkcolor "#dcdccc"
+set recolor-lightcolor "#1f1f1f"
+
