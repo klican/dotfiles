@@ -81,11 +81,17 @@
 "mpc stop"
     Shift+Alt+Mod2 + s
 
-"~/bin/VolumeNotifyPCM.sh down"
+"~/bin/dvol.sh -d 5"
     Alt+Mod2 + minus
 
-"~/bin/VolumeNotifyPCM.sh up"
+"~/bin/dvol.sh -i 5"
     Shift+Alt+Mod2 + equal
+
+"~/bin/dvol.sh -d 5"
+    Alt+Mod2 + j
+
+"~/bin/dvol.sh -i 5"
+    Alt+Mod2 + k
 
 "firefox"
     Control+Alt+Mod2 + f
@@ -142,6 +148,6 @@
 "~/bin/VolumeNotifyMaster.sh toggle"
    XF86AudioMute
 
-"~/bin/VolumeNotifyMaster.sh toggle"
+"~/bin/dvol.sh -t"
     Shift+Alt+Mod2 + m
 
