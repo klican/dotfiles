@@ -355,7 +355,7 @@ http://sachachua.com/blog/2008/01/outlining-your-notes-with-org/"
 (scroll-bar-mode -1) ;disable scrollbar
 (menu-bar-mode -1) ;disable menu
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-(global-linum-mode 1)  ;turns on line numbers
+(global-linum-mode 0)  ;turns on line numbers
 (global-set-key [?\C-h] 'delete-backward-char) ;maps 'C-h' to backspace
 (global-set-key [?\C-x ?h] 'help-command) ;maps emacs help to 'M-x h'
 (global-set-key [?\C-j] 'evil-forward-char) ;ako sipka doprava
