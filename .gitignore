@@ -64,7 +64,7 @@
 /.ncmpcpp*
 !/.ncmpcpp/config
 !/.ncmpcpp/keys
-!/.stardict
+#!/.stardict
 !/.themes
 !/bin
 !/.Xdefaults
