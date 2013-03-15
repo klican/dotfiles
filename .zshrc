@@ -89,7 +89,7 @@ eval `dircolors ~/.dir_colors/dircolors.256dark`
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git archlinux zsh-syntax-highlighting)
+plugins=(vi-mode git archlinux)
 source $ZSH/oh-my-zsh.sh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
 
@@ -105,5 +105,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
 zle -A .backward-kill-word vi-backward-kill-word
 zle -A .backward-delete-char vi-backward-delete-char
 zle -A .backward-kill-line vi-backward-kill-line
+
+# add plugin for interactive syntax highlighting
+source .zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fortune cs
