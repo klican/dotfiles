@@ -21,6 +21,7 @@ filetype plugin indent on "Turn on file type detection
 set nocompatible "turn off backward compatibility with the historic vi editor
 set encoding=utf-8 " Necessary to show unicode glyphs
 autocmd Filetype tex setlocal nofoldenable
+set nobackup "Don't save previous copy of file as file~
 set hidden "Handle multiple buffers better
 set linebreak
 set ruler "Show cursor position

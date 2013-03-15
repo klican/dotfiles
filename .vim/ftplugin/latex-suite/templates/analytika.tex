@@ -1,0 +1,125 @@
+\documentclass[paper=a4,fontsize=12pt]{scrartcl}
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyhdr}
+\usepackage[font=small,format=plain,labelfont=bf,up]{caption}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{latexsym}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}
+\usepackage{chemmacros}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\rfoot{\small{Sádzané systémom \LaTeXe}}
+\setkomafont{sectioning}{\rmfamily\bfseries}
+
+\begin{document}
+
+\noindent
+\begin{minipage}{0.3\textwidth}
+    Analytická chémia \\
+    Cvičenie~č.~<++> \\
+    Dátum: \\
+    <+dátum+>
+\end{minipage}
+\begin{minipage}{0.38\textwidth}
+    \begin{center}
+	\Large{Analýza katiónov}
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.30\textwidth}
+    \begin{flushright}
+	Andrej Klič \\
+	Rozvrhový čas: \\
+	14:50--18:20 \\
+	stôl~č.~9 
+    \end{flushright}
+\end{minipage}
+
+\subsection*{Zadanie}
+Skupinovými a selektívnymi reakciami dokážte v troch pridelených
+vzorkách prítomnosť katiónov 
+\ce{Fe^2+ \mbox{, } Fe^3+ \mbox{, } Ni^2+ \mbox{, } Al^3+ \mbox{, } Zn^2+ }.
+
+\subsubsection*{Vzorka~č.~1}
+Roztok zelenej farby s neutrálnym \pH{}, bez usadenín a zápachu. 
+
+\begin{flushleft}
+    \begin{tabular}[h]{c|c|c|c|c|c|c|c}
+ \ce{HCl} & \ce{H2SO4} & \ce{H2S \mbox{/} H+} & \ce{CH3-CS-NH2} & \ce{NaOH} & \ce{NH3} & \ce{KI} & Odhad \\
+	\hline
+ <++>     & <++>       & <++>                 & <++>            & <++>      & <++>     & <++>    & <++>  \\
+	\addlinespace
+	\multicolumn{8}{l}{\rule{0pt}{14pt}\small{\textbf{Tabuľka 1:} Skupinové reakcie
+    prvej vzorky}}
+\end{tabular}
+\end{flushleft}
+
+Selektívny dôkaz \ce{Ni^{2+}} :
+\begin{reactions}
+%    Ni2+ \aq + 2 NH3 \aq + 2 C4H8N2O2 \aq{} &-> Ni(C4H7N2O2)2 \solid + 2 NH4+ \aq \\
+\end{reactions}
+
+\subsubsection*{Vzorka~č.~2}
+Roztok zelenej farby s neutrálnym \pH{}, bez usadenín a zápachu. 
+
+\begin{flushleft}
+    \begin{tabular}[h]{c|c|c|c|c|c|c|c}
+ \ce{HCl} & \ce{H2SO4} & \ce{H2S \mbox{/} H+} & \ce{CH3-CS-NH2} & \ce{NaOH} & \ce{NH3} & \ce{KI} & Odhad \\
+	\hline
+ <++>     & <++>       & <++>                 & <++>            & <++>      & <++>     & <++>    & <++>  \\
+	\addlinespace
+	\multicolumn{8}{l}{\rule{0pt}{14pt}\small{\textbf{Tabuľka 2:} Skupinové reakcie
+    druhej vzorky}}
+\end{tabular}
+\end{flushleft}
+
+
+Selektívny dôkaz \ce{Al^{3+}}:
+\begin{reactions}
+    Al^{3+} + \text{kys.~1,2-dihydroxyantrachinón-3-sulfónová} &->[\mbox{\small{\pH{}>7}}] \text{{\emph{fialový $\odot$}}} \\
+\end{reactions}
+
+\subsubsection*{Vzorka~č.~3}
+Roztok zelenej farby s neutrálnym \pH{}, bez usadenín a zápachu.
+
+\begin{flushleft}
+    \begin{tabular}[h]{c|c|c|c|c|c|c|c}
+ \ce{HCl} & \ce{H2SO4} & \ce{H2S \mbox{/} H+} & \ce{CH3-CS-NH2} & \ce{NaOH} & \ce{NH3} & \ce{KI} & Odhad \\
+	\hline
+ <++>     & <++>       & <++>                 & <++>            & <++>      & <++>     & <++>    & <++>  \\
+	\addlinespace
+	\multicolumn{8}{l}{\rule{0pt}{14pt}\small{\textbf{Tabuľka 1:} Skupinové reakcie
+    prvej vzorky}}
+\end{tabular}
+\end{flushleft}
+
+Selektívny dôkaz \ce{Hg^{2+}}:
+\begin{reactions}
+%    Hg^{2+} \aq + 2 KI \aq{} &-> 2 K+ \aq{} + HgI2 \solid \mbox{\emph{\small{\;červeno-oranžová \ce{v} }}} \\ 
+%    HgI2 \solid{} + 2 K+ \aq{} &->[\mbox{\emph{\small{nadbytok skúmadla}}}] 2 K+
+%    \aq{} + [HgI4]^{2-} \aq{} \mbox{\emph{\small{\;bezfarebný $\odot$}}}  
+\end{reactions}
+\begin{reactions}
+%    Hg^{2+} \aq + 4 KI \aq + Na2SO3 \aq + 2 CuSO4 \aq + HCl \aq{} &-> Cu2[HgI4] \\
+%    2 KI \aq + Hg^{2+} \aq + 2 CuI \solid{} &-> Cu2[HgI4] + 2 K+ \aq
+\end{reactions}
+
+\subsection*{Záver}
+Na tomto laboratórnom cvičení som si vyskúšal skupinové a selektívne reakcie na
+dokazovanie katiónov. V pridelených vzorkách som dokázal tieto ióny: \\
+\begin{itemize}
+    \item 1.~vzorka: \ce{Ni^{2+}} \\
+    \item 2.~vzorka: \ce{Ni^{2+}} spolu s \ce{Al^{3+}} \\
+    \item 3.~vzorka: \ce{Ni^{2+}} súčasne s \ce{Hg^{2+}} 
+\end{itemize}
+
+
+\end{document}
+
+
+

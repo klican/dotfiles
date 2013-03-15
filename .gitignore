@@ -52,8 +52,10 @@
 !/.vim
 /.vim/*
 !/.vim/bundle
-!/.vim/gvimrc
-!/.vim/vimrc
+!/.vim/colors
+!/.vim/ftplugin
+!/.gvimrc
+!/.vimrc
 !/.tmux
 !/.tmux.conf
 !/.powerline
@@ -80,8 +82,6 @@
 !/.gitconfig
 !/.gitmodules
 !/.gitignore
-!/.gvimrc
-!/.vimrc
 !/.pentadactylrc
 !/.xbindkeysrc
 !/.xinitrc
