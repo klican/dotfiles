@@ -360,7 +360,7 @@ globalkeys = awful.util.table.join(
 --    awful.key({ modkey }, "w", function () exec("firefox") end),
 --    awful.key({ altkey }, "F1",  function () exec("urxvt") end),
     awful.key({ altkey }, "m", function () scratch.drop("urxvtc +tr -bg rgba:0000/0000/0000/cccc -e ncmpcpp", "bottom", nil, 925, 0.45) end),
-    awful.key({ altkey }, "t", function () scratch.drop("urxvtc +tr -bg rgba:0000/0000/0000/aaaa", "top", nil, 800, 260) end),
+    awful.key({ altkey }, "t", function () scratch.drop("urxvtc +tr -bg rgba:0000/0000/0000/aaaa -fg rgba:ff00/ff00/ff00/ff00", "top", nil, 800, 260) end),
 --    awful.key({ modkey }, "a", function () exec("urxvt -T Alpine -e alpine.exp") end),
 --    awful.key({ modkey }, "g", function () sexec("GTK2_RC_FILES=~/.gtkrc-gajim gajim") end),
 --    awful.key({ modkey }, "q", function () exec("emacsclient --eval '(make-remember-frame)'") end),
