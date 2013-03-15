@@ -50,6 +50,7 @@
 /.config/ranger/history
 /.config/ranger/tagged
 !/.config/zathura/zathurarc
+!/.fonts
 !/.vim
 /.vim/*
 !/.vim/bundle
