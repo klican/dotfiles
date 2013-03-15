@@ -61,6 +61,7 @@
 !/.tmux
 !/.tmux.conf
 !/.powerline
+!/.dircolors-solarized
 !/.oh-my-zsh
 !/.zsh-syntax-highlighting
 !/.mpd

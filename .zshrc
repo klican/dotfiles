@@ -78,7 +78,7 @@ alias halt="sudo halt"
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="false"
 setopt nocorrectall
-eval `dircolors ~/.dir_colors/dircolors.256dark`
+eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
 
 # this must stay commented, because ranger would not display correctly
 #export TERM=rxvt-unicode-256color # for a colorful rxvt unicode session
