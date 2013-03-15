@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Customize this stuff
-IF="Master"
+IF="PCM"
 SECS="1"
 
 FONT="fixed"
