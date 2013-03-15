@@ -71,6 +71,7 @@
 !/.Xdefaults
 !/.colors
 !/.bashrc
+!/.zshrc
 !/.emacs.d
 /.emacs.d/auto-save-list
 /.emacs.d/el-get
