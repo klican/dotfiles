@@ -61,12 +61,9 @@
 !/.mpd
 /.mpd/*
 !/.mpd/mpd.conf
-!/.mpd/playlists
 /.ncmpcpp*
 !/.ncmpcpp/config
 !/.ncmpcpp/keys
-#!/.stardict
-!/.themes
 !/bin
 !/.Xdefaults
 !/.colors
@@ -80,15 +77,12 @@
 /.emacs.d/ac-comphist.dat
 /.emacs.d/eshell/
 !/.emacs
-!/.fonts.conf
 !/.gitconfig
 !/.gitmodules
 !/.gitignore
 !/.gvimrc
 !/.vimrc
 !/.pentadactylrc
-!/.profile
-!/.rtorrent.rc
 !/.xbindkeysrc
 !/.xinitrc
 
