@@ -43,12 +43,13 @@
 #Include these directories
 !/.config
 /.config/*
-!/.config/awesome/*
-!/.config/ranger/commands.py
-!/.config/ranger/rc.conf
-!/.config/ranger/rifle.conf
-!/.config/ranger/scope.sh
-!/.config/zathura/*
+!/.config/awesome
+!/.config/ranger
+/.config/ranger/__pycache__
+/.config/ranger/bookmarks
+/.config/ranger/history
+/.config/ranger/tagged
+!/.config/zathura/zathurarc
 !/.vim
 /.vim/*
 !/.vim/bundle
@@ -69,8 +70,6 @@
 !/bin
 !/.Xdefaults
 !/.colors
-!/.bash.d
-/.bash.d/bash_history
 !/.bashrc
 !/.emacs.d
 /.emacs.d/auto-save-list
