@@ -14,6 +14,7 @@ mpd ~/.mpd/mpd.conf
 (sleep 10 && dropboxd) &
 compton &
 numlockx &
+syndaemon -k -i 0.7 -d -R &
 unclutter -grab &
 #trayfreq &
 (sleep 2 && xbindkeys) &
