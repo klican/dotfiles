@@ -72,6 +72,7 @@
 !/.ncmpcpp/keys
 !/bin
 !/.Xdefaults
+!/.inputrc
 !/.colors
 !/.bashrc
 !/.zshrc

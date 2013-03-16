@@ -1,0 +1,36 @@
+## Be 8 bit clean.
+#set meta-flag on
+#set input-meta on
+#set output-meta on
+#set convert-meta off
+#
+## mode in everything that uses readline
+#set editing-mode vi
+#set keymap vi
+
+#hints from: http://www.jukie.net/bart/blog/20040326082602
+
+set editing-mode vi
+set keymap vi
+set convert-meta on
+
+# ^p check for partial match in history
+bind -m vi-insert "\C-p":dynamic-complete-history
+# ^n cycle through the list of partial matches
+bind -m vi-insert "\C-n":menu-complete
+# for Ctrl+l clear screen in emacs-mode
+#"\C-L":'clear\n'
+#Ctrl+l clear screen for vi-mode
+bind -m vi-insert "\C-l":clear-screen
+
+#From:
+#https://github.com/livibetter/dotfiles/blob/master/inputrc
+# Automatic inputting '' or "" and move the cursor
+"\C-x\'": "'' \e[D\e[D"
+"\C-x\"": "\"\" \e[D\e[D"
+
+# Timestamping
+"\C-xt": "\"$(date --utc +%Y-%m-%dT%H:%M:%SZ)\" "
+
+set match-hidden files off
+
