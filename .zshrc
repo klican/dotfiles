@@ -76,7 +76,7 @@ alias halt="sudo halt"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="false"
+DISABLE_AUTO_UPDATE="true"
 setopt nocorrectall
 eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
 
