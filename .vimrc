@@ -98,6 +98,14 @@ EOF
 set rtp+=~/.powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
+" vim-fugitive
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gd :Gdiff<CR>
+nmap <Leader>gl :Glog<CR>
+nmap <Leader>gb :Gblame<CR>
+nmap <Leader>gc :Gcommit<CR>
+nmap <Leader>gp :Git push<CR>
+
 " UndoTree
 map <leader>g :GundoToggle<CR>
 
