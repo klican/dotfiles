@@ -25,4 +25,4 @@ stardict -h &
 #twmnd &
 #(sleep 4 && skype) &
 
-exec ck-launch-session awesome 
+exec awesome 
