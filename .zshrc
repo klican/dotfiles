@@ -107,6 +107,6 @@ zle -A .backward-delete-char vi-backward-delete-char
 zle -A .backward-kill-line vi-backward-kill-line
 
 # add plugin for interactive syntax highlighting
-source .zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fortune cs
