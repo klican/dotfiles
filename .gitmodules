@@ -10,10 +10,6 @@
     path = .vim/bundle/ack.vim
     url = https://github.com/mileszs/ack.vim.git
     ignore = dirty
-[submodule ".vim/bundle/AutoClose"]
-    path = .vim/bundle/AutoClose
-    url = https://github.com/vim-scripts/AutoClose.git
-    ignore = dirty
 [submodule ".vim/bundle/ctrlp.vim"]
     path = .vim/bundle/ctrlp.vim
     url = https://github.com/kien/ctrlp.vim.git
@@ -113,4 +109,8 @@
 [submodule ".dircolors-solarized"]
     path = .dircolors-solarized
     url = https://github.com/seebi/dircolors-solarized.git
+    ignore = dirty
+[submodule ".vim/bundle/delimitMate"]
+    path = .vim/bundle/delimitMate
+    url = https://github.com/Raimondi/delimitMate.git
     ignore = dirty
