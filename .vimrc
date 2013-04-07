@@ -128,15 +128,6 @@ let g:ctrlp_switch_buffer = 0
 "initialize the repeat.vim
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
-" Neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-if !exists('g:neocomplcache_omni_functions')
-    let g:neocomplcache_omni_functions = {}
-endif
-let g:neocomplcache_omni_functions.python = 'jedi#complete'
-let g:jedi#popup_on_dot = 0
-
 " Syntastic
 let g:syntastic_mode_map = {'active_filetypes': ['python'] }
 let g:syntastic_python_checker = ['flake8', 'pylint']
