@@ -106,3 +106,19 @@
     path = .vim/bundle/delimitMate
     url = https://github.com/Raimondi/delimitMate.git
     ignore = dirty
+[submodule ".vim/bundle/vim-gitgutter"]
+    path = .vim/bundle/vim-gitgutter
+    url = https://github.com/airblade/vim-gitgutter.git
+    ignore = dirty
+[submodule ".vim/bundle/vim-multiple-cursors"]
+    path = .vim/bundle/vim-multiple-cursors
+    url = https://github.com/terryma/vim-multiple-cursors.git
+    ignore = dirty
+[submodule ".vim/bundle/vim-indent-guides"]
+    path = .vim/bundle/vim-indent-guides
+    url = https://github.com/nathanaelkane/vim-indent-guides.git
+    ignore = dirty
+[submodule "/home/lelio/.vim/bundle/molokai"]
+	path = /home/lelio/.vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+    ignore = dirty
