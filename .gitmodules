@@ -118,7 +118,3 @@
     path = .vim/bundle/vim-indent-guides
     url = https://github.com/nathanaelkane/vim-indent-guides.git
     ignore = dirty
-[submodule "/home/lelio/.vim/bundle/molokai"]
-	path = /home/lelio/.vim/bundle/molokai
-	url = https://github.com/tomasr/molokai.git
-    ignore = dirty
