@@ -116,6 +116,12 @@ map <leader>nt :NERDTreeToggle<CR>
 nmap <Leader>tg :TagbarToggle<CR>
 let g:tagbar_sort = 0
 
+" Ultisnips
+let g:UltiSnipsExpandTrigger = '<c-l>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+let g:UltiSnipsListSnippets = '<c-m>'
+
 " CtrlP.vim
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_match_window_bottom = 1
