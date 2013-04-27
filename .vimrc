@@ -95,7 +95,7 @@ EOF
 """"""""""""""""""""""""
 
 "vim-powerline
-set rtp+=~/.powerline/powerline/bindings/vim
+"set rtp+=~/.powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
 " vim-fugitive
@@ -139,9 +139,14 @@ let g:syntastic_mode_map = {'active_filetypes': ['python'] }
 let g:syntastic_python_checkers = ['flake8', 'pylint']
 let syntastic_python_flake8_args = '--ignore=E501'
 let g:syntastic_auto_jump = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 4
 let g:syntastic_enable_highlighting = 1
+
+" ListToggle
+let g:lt_location_list_toggle_map = '<leader>se'
+let g:lt_quickfix_list_toggle_map = '<leader>sq'
+let g:lt_height = 4
 
 " vim-python-pep8-indent
 let g:pymode_indent = 0

@@ -122,3 +122,7 @@
     path = .vim/bundle/molokai
     url = https://github.com/tomasr/molokai.git
     ignore = dirty
+[submodule ".vim/bundle/ListToggle.git"]
+    path = .vim/bundle/ListToggle.git
+    url = https://github.com/Valloric/ListToggle.git
+    ignore = dirty
