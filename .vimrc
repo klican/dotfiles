@@ -143,9 +143,11 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 4
 let g:syntastic_enable_highlighting = 1
 
+set highlight SignColumn  = ctermbg=Black
+
 " ListToggle
 let g:lt_location_list_toggle_map = '<leader>se'
-let g:lt_quickfix_list_toggle_map = '<leader>sq'
+let g:lt_quickfix_list_toggle_map = '<leader>sf'
 let g:lt_height = 4
 
 " vim-python-pep8-indent
