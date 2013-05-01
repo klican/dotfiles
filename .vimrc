@@ -116,6 +116,9 @@ map <leader>nt :NERDTreeToggle<CR>
 nmap <Leader>tg :TagbarToggle<CR>
 let g:tagbar_sort = 0
 
+" delimitMate
+exec "set <BS>=\<C-H>"
+
 " Ultisnips
 let g:UltiSnipsExpandTrigger = '<c-l>'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
