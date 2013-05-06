@@ -36,7 +36,7 @@ set backspace=indent,eol,start "bez tohto bs maže znaky iba z aktuálne napísa
 set scrolloff=2
 " Get rid of annoying pause on terminal
 set timeout timeoutlen=1500 ttimeoutlen=0
-"set wildmenu "Enhanced command line completion
+set wildmenu "Enhanced command line completion
 "set wildmode=list:longest "Complete files like a shell
 set mouse=a    "Enable the use of the mouse
 " Easier micro-navigation in insert mode
@@ -120,10 +120,10 @@ let g:tagbar_sort = 0
 exec "set <BS>=\<C-H>"
 
 " Ultisnips
-let g:UltiSnipsExpandTrigger = '<c-l>'
+let g:UltiSnipsExpandTrigger = '<c-e>'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-let g:UltiSnipsListSnippets = '<c-m>'
+let g:UltiSnipsListSnippets = '<c-l>'
 
 " CtrlP.vim
 let g:ctrlp_cmd = 'CtrlPBuffer'
