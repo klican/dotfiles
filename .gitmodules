@@ -123,5 +123,6 @@
     url = https://github.com/Valloric/ListToggle.git
     ignore = dirty
 [submodule ".vim/bundle/indentLine"]
-	path = .vim/bundle/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
+    path = .vim/bundle/indentLine
+    url = https://github.com/Yggdroot/indentLine.git
+    ignore = dirty
