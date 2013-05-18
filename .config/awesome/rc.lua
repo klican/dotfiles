@@ -474,16 +474,13 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
     awful.key({ modkey, "Control"},"r", function (c) c:redraw() end),
     awful.key({ modkey, "Shift" }, "0", function (c) c.sticky = not c.sticky end),
+    awful.key({ modkey, "Shift" }, "f", function (c) awful.client.floating.toggle(c) end),
     awful.key({ modkey, "Shift" }, "m", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey, "Shift" }, "c", function (c) exec("kill -CONT " .. c.pid) end),
     awful.key({ modkey, "Shift" }, "s", function (c) exec("kill -STOP " .. c.pid) end),
     awful.key({ modkey, "Shift" }, "t", function (c)
         if   c.titlebar then awful.titlebar.remove(c)
         else awful.titlebar.add(c, { modkey = modkey }) end
-    end),
-    awful.key({ modkey, "Shift" }, "f", function (c) if awful.client.floating.get(c)
-        then awful.client.floating.delete(c);    awful.titlebar.remove(c)
-        else awful.client.floating.set(c, true); awful.titlebar.add(c) end
     end)
 )
 -- }}}
@@ -572,51 +569,16 @@ awful.rules.rules = {
 
 }
 
----- {{{ Focus signal handlers
---client.add_signal("focus", function (c) c.border_color = beautiful.border_focus end)
---client.add_signal("unfocus", function (c) c.border_color = beautiful.border_normal end)
----- }}}
---
----- {{{ Arrange signal handler
---for s = 1, screen.count() do screen[s]:add_signal("arrange", function ()
--- local clients = awful.client.visible(s)
--- local layout = awful.layout.getname(awful.layout.get(s))
---
--- if #clients > 0 then -- Fine grained borders and floaters control
--- for _, c in pairs(clients) do -- Floaters always have borders
--- if 1 > 0 then
----- if awful.client.floating.get(c) or layout == "floating" then
--- c.border_width = beautiful.border_width
---
----- if not c.fullscreen then -- Floaters have titlebars
----- if not c.titlebar and c.class ~= "Xmessage" then
----- awful.titlebar.add(c, { modkey = modkey })
----- end -- Floaters are always on top
----- c.above = true
----- end
---
--- -- No borders with only one visible client
--- elseif #clients == 1 or layout == "max" then
--- clients[1].border_width = 0
--- else
--- c.border_width = beautiful.border_width
--- end
--- end
--- end
--- end)
---end
----- }}}
-
 -- {{{ Signals
 --
 -- {{{ Manage signal handler
 client.add_signal("manage", function (c, startup)
-    -- Add titlebar to floaters, but remove those from rule callback
-    if awful.client.floating.get(c)
-    or awful.layout.get(c.screen) == awful.layout.suit.floating then
-        if   c.titlebar then awful.titlebar.remove(c)
-        else awful.titlebar.add(c, {modkey = modkey}) end
-    end
+--    -- Add titlebar to floaters, but remove those from rule callback
+--    if awful.client.floating.get(c)
+--    or awful.layout.get(c.screen) == awful.layout.suit.floating then
+--        if   c.titlebar then awful.titlebar.remove(c)
+--        else awful.titlebar.add(c, {modkey = modkey}) end
+--    end
 
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function (c)
@@ -637,22 +599,30 @@ client.add_signal("manage", function (c, startup)
         end
     end
 end)
--- }}}
 
+-- }}}
 -- {{{ Focus signal handlers
-client.add_signal("focus",   function (c) c.border_color = beautiful.border_focus  end)
+client.add_signal("focus", function (c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function (c) c.border_color = beautiful.border_normal end)
 -- }}}
 
 -- {{{ Arrange signal handler
-for s = 1, scount do screen[s]:add_signal("arrange", function ()
+for s = 1, screen.count() do screen[s]:add_signal("arrange", function ()
     local clients = awful.client.visible(s)
     local layout = awful.layout.getname(awful.layout.get(s))
 
-    for _, c in pairs(clients) do -- Floaters are always on top
-        if   awful.client.floating.get(c) or layout == "floating"
-        then if not c.fullscreen then c.above       =  true  end
-        else                          c.above       =  false end
+    if #clients > 0 then -- Fine grained borders and floaters control
+        for _, c in pairs(clients) do -- Floaters always have borders
+            if awful.client.floating.get(c) or layout == "floating" then
+                c.border_width = beautiful.border_width
+
+            -- No borders with only one visible client
+            elseif #clients == 1 or layout == "max" then
+                clients[1].border_width = 0
+            else
+                c.border_width = beautiful.border_width
+            end
+        end
     end
   end)
 end
