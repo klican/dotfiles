@@ -120,7 +120,7 @@ let g:tagbar_sort = 0
 exec "set <BS>=\<C-H>"
 
 " Ultisnips
-let g:UltiSnipsExpandTrigger = '<c-e>'
+let g:UltiSnipsExpandTrigger = '<c-j>'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 let g:UltiSnipsListSnippets = '<c-l>'
