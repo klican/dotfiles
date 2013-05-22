@@ -14,7 +14,7 @@ set guioptions=bCs
 " to access addons preferences screen, type :open about:addons
 style "chrome://*" #appmenu-toolbar-button { display:none; } 
 
-"Put Zotero icon in status bar
+" Put Zotero icon in status bar
 javascript <<EOF
 (function(){
     var zoteroPanel = document.createElement("statusbarpanel");
@@ -49,8 +49,8 @@ set maxitems=16
 " set what keys will be used to compose the two character hints
 " identifying links on page.
 " ProTip: If you want to learn better to touch-type, start with, e.g. only
-"basic (easiest to learn) keys called 'homerow' (asdfghjkl), and when you
-"get more confident, start adding new keys you want to learn better.
+" basic (easiest to learn) keys called 'homerow' (asdfghjkl), and when you
+" get more confident, start adding new keys you want to learn better.
 set hintkeys=asdfghjklzxcvmwertyuiop
 " Scroll 8 lines of webpage instead of only one at the time,
 " when moving with j/k
@@ -63,8 +63,8 @@ map <C-o> H
 map <C-i> L
 " scroll up and down in insert mode, fore example to circle through the
 " popping suggestions on google page
-imap <c-j> <down>
-imap <c-k> <up>
+imap <c-j> <Down>
+imap <c-k> <Up>
 " Adds an item to the Zotero library from the current webpage
 " (equiv. to clicking on the little page/book icon in the FF address bar)
 map -js <C-A-s> Zotero_Browser.scrapeThisPage()
