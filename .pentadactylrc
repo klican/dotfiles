@@ -15,7 +15,7 @@ set hintkeys=asdfghjklzxcvmwertyuiop
 
 """ begin Zotero item saving shortcuts """
 " Adds an item to the Zotero library from the current webpage
-" (equiv. to clicking on the little page/book ion in the FF address bar)
+" (equiv. to clicking on the little page/book icon in the FF address bar)
 map -js <C-A-s> Zotero_Browser.scrapeThisPage()
 " Save the current page as a webpage item in Zotero
 map -js <C-A-p> ZoteroPane.addItemFromPage()
@@ -39,6 +39,7 @@ set maxitems=16
 " vim: set ft=pentadactyl:
 
 colorscheme zenburn
+highlight StatusLineNormal background: #1c1c1c;
 style "chrome://*" #appmenu-toolbar-button { display:none; } 
 
 "hi Hint               font-family: monospace; font-size: 12pt; font-weight: normal; color: #fff; background-color: #666; padding: 0px 1px; border: 1px solid #FFFFFF;
