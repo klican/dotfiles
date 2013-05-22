@@ -70,8 +70,6 @@ map <C-i> L
 " popping suggestions on google page
 imap <c-j> <Down>
 imap <c-k> <Up>
-imap <Tab> <Down>
-imap <S-Tab> <Up>
 " Hitting Ctrl-m is equal to hitting Enter key in Unix world. As Enter is
 " far away from home-row, hitting Ctrl-m is more ergonomic (no need to
 " sqweeze right wrist to reach Enter with pinky).
