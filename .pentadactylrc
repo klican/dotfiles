@@ -68,9 +68,9 @@ imap <c-k> <Up>
 " Adds an item to the Zotero library from the current webpage
 " (equiv. to clicking on the little page/book icon in the FF address bar)
 map -js <C-A-s> Zotero_Browser.scrapeThisPage()
-" Save the current page as a webpage item in Zotero
-" useful, when page don't have autoexporter, but we still want to have
-" choice to save page in Zotero
+" Save the current page as a webpage item in Zotero.
+" Useful, when page don't have autoexporter (no little icon down-right in
+" statusline), but we still want to have choice to save page in Zotero
 map -js <C-A-p> ZoteroPane.addItemFromPage()
 " Use ; (semicolon) to jump on specified tab,
 " for example typing 3; changes focus to the third tab
