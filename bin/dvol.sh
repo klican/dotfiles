@@ -5,11 +5,11 @@ IF="PCM"
 SECS="1"
 
 FONT="fixed"
-BG="#1f1f1f"
+BG="#1c1c1c"
 FG="#268bd2"
-XPOS="550"
-YPOS="400"
-WIDTH="205"
+XPOS="581"
+YPOS="350"
+WIDTH="204"
 
 #Probably do not customize
 PIPE="/tmp/dvolpipe"
