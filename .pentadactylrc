@@ -1,27 +1,20 @@
 "1.0b7pre-hg6239-default "(created 2011/07/02 23:19:21)"
-loadplugins '\.(js|penta)$'
-group user
-highlight Hint font: bold 13.5px "Envy Code R", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black; text-transform: uppercase;
-highlight Hint::after content: attr(number) !important; font-size: 10.5pt;
-map -modes=v j v_<Down>
-map -modes=v k v_<Up>
-map -modes=n,v j <count>8<C-e>
-map -modes=n,v k <count>8<C-y>
-map <C-o> H
-map <C-i> L
-"set complete+=l
+" (The date, when I started to use the mighty Pentadactyl)
+
+" list here the plugins to load
+loadplugins zenburn.penta
+loadplugins buftabs.js
+
+""" Set the GUI elements, you want to display. """
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" For list of all possible on-screen elements, type :set guioptions=
 set guioptions=bCs
-set hintkeys=asdfghjklzxcvmwertyuiop
+" Don't waste space displaying FF menu button, we have commands instead:
+" to access firefox preferences, type :preferences
+" to access addons preferences screen, type :open about:addons
+style "chrome://*" #appmenu-toolbar-button { display:none; } 
 
-""" begin Zotero item saving shortcuts """
-" Adds an item to the Zotero library from the current webpage
-" (equiv. to clicking on the little page/book icon in the FF address bar)
-map -js <C-A-s> Zotero_Browser.scrapeThisPage()
-" Save the current page as a webpage item in Zotero
-map -js <C-A-p> ZoteroPane.addItemFromPage()
-""" end Zotero item saving shortcuts   """
-
-"Put zotero icon in status bar
+"Put Zotero icon in status bar
 javascript <<EOF
 (function(){
     var zoteroPanel = document.createElement("statusbarpanel");
@@ -33,17 +26,55 @@ javascript <<EOF
 })();
 EOF
 
+""" Pentadactyl appearance """
+""""""""""""""""""""""""""""""
+" make use of nice, eye-friendly colorscheme
+colorscheme zenburn
+" slightly adjust color of the statusline
+highlight StatusLineNormal background: #1c1c1c;
+" Set fine-tuned appearance of hint characters:
+" font weight, size and type, white color of hints background, color of
+" hints, and transform them to uppercase.
+" -Took lots of time to make this cool, so ->> Don't touch this! <<-
+highlight Hint font: bold 13.5px "Envy Code R", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black; text-transform: uppercase;
+" Please, do not recolor background of links when displaying hints!
+highlight HintElem background-color: ; color: ;
 " Set maximum numbers of completion items to display at once
+" so howered menu won't clutter half of our loaded webpage
 set maxitems=16
 
-" vim: set ft=pentadactyl:
+""" Customize keyboard shortcuts """
+""""""""""""""""""""""""""""""""""""
+""" Most important """
+" set what keys will be used to compose the two character hints
+" identifying links on page.
+" ProTip: If you want to learn better to touch-type, start with, e.g. only
+"basic (easiest to learn) keys called 'homerow' (asdfghjkl), and when you
+"get more confident, start adding new keys you want to learn better.
+set hintkeys=asdfghjklzxcvmwertyuiop
+" Scroll 8 lines of webpage instead of only one at the time,
+" when moving with j/k
+map -modes=n,v j <count>8<C-e>
+map -modes=n,v k <count>8<C-y>
+" Standard Pentadactyl shortcuts of going back and forward in history are
+" H (back) and L (forward). But I like to have it behaving as in Vim,
+" so let's remap it to C-o and C-i
+map <C-o> H
+map <C-i> L
+" scroll up and down in insert mode, fore example to circle through the
+" popping suggestions on google page
+imap <c-j> <down>
+imap <c-k> <up>
+" Adds an item to the Zotero library from the current webpage
+" (equiv. to clicking on the little page/book icon in the FF address bar)
+map -js <C-A-s> Zotero_Browser.scrapeThisPage()
+" Save the current page as a webpage item in Zotero
+" useful, when page don't have autoexporter, but we still want to have
+" choice to save page in Zotero
+map -js <C-A-p> ZoteroPane.addItemFromPage()
 
-colorscheme zenburn
-highlight StatusLineNormal background: #1c1c1c;
-style "chrome://*" #appmenu-toolbar-button { display:none; } 
-
-"hi Hint               font-family: monospace; font-size: 12pt; font-weight: normal; color: #fff; background-color: #666; padding: 0px 1px; border: 1px solid #FFFFFF;
-
-"hi HintElem             background-color: #222222; color: #f6e9e9;
-hi HintElem              background-color: ; color: ;
-
+""" Miscelateous """
+""""""""""""""""""""
+" Firefox location bar entries:
+" (bookmarks and history sorted in an intelligent way)
+set complete=location
