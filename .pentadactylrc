@@ -46,7 +46,7 @@ set maxitems=16
 """ Customize keyboard shortcuts """
 """"""""""""""""""""""""""""""""""""
 """ Most important """
-" set what keys will be used to compose the two character hints
+" Set what keys will be used to compose the two character hints
 " identifying links on page.
 " ProTip: If you want to learn better to touch-type, start with, e.g. only
 " basic (easiest to learn) keys called 'homerow' (asdfghjkl), and when you
@@ -72,12 +72,14 @@ map -js <C-A-s> Zotero_Browser.scrapeThisPage()
 " Useful, when page don't have autoexporter (no little icon down-right in
 " statusline), but we still want to have choice to save page in Zotero
 map -js <C-A-p> ZoteroPane.addItemFromPage()
-" Use ; (semicolon) to jump on specified tab,
-" for example typing 3; changes focus to the third tab
-map <;> b
+" Use space key to jump on specified tab,
+" for example typing 3<space> changes focus to the third tab
+map <space> b
 
 """ Miscelateous """
 """"""""""""""""""""
 " Firefox location bar entries:
 " (bookmarks and history sorted in an intelligent way)
-set complete=location
+set complete+=location
+" Display link address at bottom after double semicolons (;;)
+set showstatuslinks=command
