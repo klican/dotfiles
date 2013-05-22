@@ -8,7 +8,7 @@ loadplugins buftabs.js
 """ Set the GUI elements, you want to display. """
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " For list of all possible on-screen elements, type :set guioptions=
-set guioptions=bCs
+set guioptions=bCsn
 " Don't waste space displaying FF menu button, we have commands instead:
 " to access firefox preferences, type :preferences
 " to access addons preferences screen, type :open about:addons
@@ -72,6 +72,9 @@ map -js <C-A-s> Zotero_Browser.scrapeThisPage()
 " useful, when page don't have autoexporter, but we still want to have
 " choice to save page in Zotero
 map -js <C-A-p> ZoteroPane.addItemFromPage()
+" Use ; (semicolon) to jump on specified tab,
+" for example typing 3; changes focus to the third tab
+map <;> b
 
 """ Miscelateous """
 """"""""""""""""""""
