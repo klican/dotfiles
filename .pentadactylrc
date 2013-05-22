@@ -1,7 +1,7 @@
 "1.0b7pre-hg6239-default "(created 2011/07/02 23:19:21)"
 loadplugins '\.(js|penta)$'
 group user
-highlight Hint font: bold 13.5px "DejaVu Sans Mono", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black; text-transform: uppercase;
+highlight Hint font: bold 13.5px "Envy Code R", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black; text-transform: uppercase;
 highlight Hint::after content: attr(number) !important; font-size: 10.5pt;
 map -modes=v j v_<Down>
 map -modes=v k v_<Up>
