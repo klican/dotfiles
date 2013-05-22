@@ -65,6 +65,12 @@ map <C-i> L
 " popping suggestions on google page
 imap <c-j> <Down>
 imap <c-k> <Up>
+" Hitting Ctrl-m is equal to hitting Enter key in Unix world. As Enter is
+" far away from home-row, hitting Ctrl-m is more ergonomic (no need to
+" sqweeze right wrist to reach Enter with pinky).
+" ProTip: one can use for same reasons Ctrl-[ instead of Esc (works out of
+" the box on Pentadactyl).
+imap <c-m> <CR>
 " Adds an item to the Zotero library from the current webpage
 " (equiv. to clicking on the little page/book icon in the FF address bar)
 map -js <C-A-s> Zotero_Browser.scrapeThisPage()
