@@ -126,3 +126,7 @@
     path = .vim/bundle/indentLine
     url = https://github.com/Yggdroot/indentLine.git
     ignore = dirty
+[submodule ".vim/bundle/pentadactyl.vim"]
+    path = .vim/bundle/pentadactyl.vim
+    url = https://github.com/haesken/pentadactyl.vim.git
+    ignore = dirty
