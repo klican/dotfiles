@@ -35,11 +35,13 @@ EOF
 colorscheme zenburn
 " slightly adjust color of the statusline
 highlight StatusLineNormal background: #1c1c1c;
-" Set fine-tuned appearance of hint characters:
+" Set fine-tuned appearance of hintboxes:
 " font weight, size and type, white color of hints background, color of
 " hints, and transform them to uppercase.
 " -Took lots of time to make this cool, so ->> Don't touch this! <<-
 highlight Hint font: bold 13.5px "Envy Code R", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black; text-transform: uppercase;
+" Do not show link descriptions in hintboxes
+highlight Hint::after content: attr(number) !important;
 " Please, do not recolor background of links when displaying hints!
 highlight HintElem background-color: ; color: ;
 " Set maximum numbers of completion items to display at once
