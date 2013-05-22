@@ -86,6 +86,8 @@
 !/.gitconfig
 !/.gitmodules
 !/.gitignore
+!/.pentadactyl
+/.pentadactyl/info/
 !/.pentadactylrc
 !/.xbindkeysrc
 !/.xinitrc

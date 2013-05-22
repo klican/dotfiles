@@ -9,6 +9,9 @@ loadplugins buftabs.js
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " For list of all possible on-screen elements, type :set guioptions=
 set guioptions=bCsn
+" Don't show standard FF tabbar. -We have 'buftabs' instead!
+" (to revert to default setting, set showtabline=always)"
+set showtabline=never
 " Don't waste space displaying FF menu button, we have commands instead:
 " to access firefox preferences, type :preferences
 " to access addons preferences screen, type :open about:addons
