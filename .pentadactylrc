@@ -31,10 +31,12 @@ EOF
 
 """ Pentadactyl appearance """
 """"""""""""""""""""""""""""""
-" make use of nice, eye-friendly colorscheme
+" Make use of nice, eye-friendly colorscheme
 colorscheme zenburn
-" slightly adjust color of the statusline
+" Slightly adjust color of the statusline
 highlight StatusLineNormal background: #1c1c1c;
+" Make current tab more visible
+highlight BufTabSelected -a color: #00bbff !important; font-weight: bold !important;
 " Set fine-tuned appearance of hintboxes:
 " font weight, size and type, white color of hints background, color of
 " hints, and transform them to uppercase.
@@ -66,7 +68,7 @@ map -modes=n,v k <count>8<C-y>
 " so let's remap it to C-o and C-i
 map <C-o> H
 map <C-i> L
-" scroll up and down in insert mode, fore example to circle through the
+" Scroll up and down in insert mode, fore example to circle through the
 " popping suggestions on google page
 imap <c-j> <Down>
 imap <c-k> <Up>
@@ -95,4 +97,4 @@ map <space> b
 " (bookmarks and history sorted in an intelligent way)
 set complete+=location
 " Display link address at bottom after double semicolons (;;)
-set showstatuslinks=command
+"set showstatuslinks=command
