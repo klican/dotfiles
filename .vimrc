@@ -117,13 +117,19 @@ nmap <Leader>tg :TagbarToggle<CR>
 let g:tagbar_sort = 0
 
 " delimitMate
-exec "set <BS>=\<C-H>"
+set <BS>=\<C-H>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger = '<c-j>'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 let g:UltiSnipsListSnippets = '<c-l>'
+
+" YouCompleteMe
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 
 " CtrlP.vim
 let g:ctrlp_cmd = 'CtrlPBuffer'
