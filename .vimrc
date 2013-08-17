@@ -174,3 +174,17 @@ autocmd FileType python vmap <LocalLeader>lv "vy :call VimuxRunCommand(@v . "\n"
 autocmd FileType python nmap <LocalLeader>lv vip<LocalLeader>vs<CR>
 " Close vim tmux runner opened by VimuxRunCommand
 autocmd FileType python map <LocalLeader>lc :VimuxCloseRunner<CR>
+
+" Vim-R-plugin
+let vimrplugin_screenplugin = 0
+let vimrplugin_tmux = 1
+let vimrplugin_notmuxconf = 1
+"let vimrplugin_only_in_tmux = 1
+let vimrplugin_term = "urxvtc"
+let vimrplugin_routmorecolors = 1
+   if $DISPLAY != "" "only if X are running
+       let vimrplugin_openpdf = 1
+   endif
+let vimrplugin_openpdf_quietly = 1
+set modifiable
+
