@@ -6,7 +6,7 @@ set t_Co=256
 if &t_Co < 256
     colorscheme miro8   " colourscheme for the 8 colour linux term
 else
-    colorscheme solarized
+    colorscheme darkburn
 endif
 " Toggle background modes for solarized colorscheme
 call togglebg#map("<Leader>bg")
