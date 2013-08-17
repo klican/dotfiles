@@ -23,8 +23,6 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 
-export LIBVA_DRIVER_NAME=vdpau
-export VDPAU_DRIVER=r600
 export PATH=/home/lelio/perl5/bin:/home/lelio/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl
 export EDITOR="vim"
 export PYTHONPATH=~/ets/
@@ -64,6 +62,11 @@ alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
 alias gk='gitk --all&'
+
+# Adopting Majo's aliases
+alias wifiunblock='sudo rfkill unblock all'
+alias wifiblock='sudo rfkill block all'
+alias wifi='sudo wifi-menu'
 
 # via /etc/sudoers, lelio is permitted to shutdown without root password,
 # so make some aliases
