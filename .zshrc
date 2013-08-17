@@ -47,15 +47,14 @@ alias svim="sudo vim"
 alias ll="ls -hl"
 alias e="emacsclient -t"
 alias r="ranger"
+alias R="R --silent --no-save"
 alias office2pdf="libreoffice --headless --invisible --convert-to pdf"
-
 alias syu='sudo pacmatic -Syu'
 alias S='sudo pacmatic -S'
 alias rsn='sudo pacmatic -Rsn'
 alias y='yaourt'
 alias aur='yaourt -Syua'
 alias devel='yaourt -Syua --devel'
-
 # suggested from gitimmersion.com/lab_11.html
 #alias gs='git status --ignore-submodules=all'
 alias gs='git status'
