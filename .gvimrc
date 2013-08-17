@@ -3,8 +3,8 @@ set guioptions-=r  "r removes right-hand scroll bar
 set guioptions-=m  
 set guioptions+=ac  
 "set gfn=DejaVu\ Sans\ Mono\ Bold\ 10
-set guifont=Envy\ Code\ R\ 10
-colorscheme solarized
+set guifont=Envy\ Code\ R\ for\ Powerline\ 10
+"colorscheme solarized
 
 "Smooth scrolling
 "If you like the scrolling to go a bit smoother, you can use these mappings:
