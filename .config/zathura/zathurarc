@@ -1,4 +1,4 @@
-set font "Envy Code R 9"
+set font "Envy Code R for Powerline 9"
 map <F1> set "pages-per-row 1"
 map <F2> set "pages-per-row 2"
 set recolor-keephue "true"
