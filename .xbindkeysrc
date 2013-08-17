@@ -130,7 +130,7 @@
 "~/bin/urxvtc-tmux.sh"
     Alt+Mod2 + u
 
-"urxvtc	-e ncmpcpp"
+"urxvtc -e ncmpcpp"
     Control+Alt+Mod2 + m
 
 "vlc ~/bin/playlist_intrak.m3u"
