@@ -57,25 +57,12 @@ set softtabstop=4
 set shiftwidth =4  " The '>>' and '<<' command will indent by 4 spaces
 set autoindent     " copy indent from current line when starting a new line
 
-" Use ranger as vim file manager:
-"When <leader>r is pressed, ranger is launched with RANGER_RETURN_FILE
-"environment variable set to a temporary file name. After ranger quits, the
-"selected filename is read from the temporary file, and vim opens it.
-function! Ranger()
-    " Get a temp file name without creating it
-    let tmpfile = substitute(system('mktemp -u'), '\n', '', '')
-    " Launch ranger, passing it the temp file name
-    silent exec '!RANGER_RETURN_FILE='.tmpfile.' ranger'
-    " If the temp file has been written by ranger
-    if filereadable(tmpfile)
-        " Get the selected file name from the temp file
-        let filetoedit = system('cat '.tmpfile)
-        exec 'edit '.filetoedit
-        call delete(tmpfile)
-    endif
-    redraw!
-endfunction
-nmap <leader>r :call Ranger()<cr>
+" Dealing with long lines
+nmap j gj
+nmap k gk
+nmap 0 g^
+nmap $ g$
+set showbreak=…
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
