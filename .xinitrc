@@ -6,10 +6,9 @@ fi
 ##Execute at login##
 xrdb ~/.Xdefaults &
 udiskie &
-xbacklight -set 25 &
-sudo light 20 &
+xbacklight -set 10 &
 urxvtd -q -f -o &
-mpd ~/.mpd/mpd.conf 
+mpd ~/.mpd/mpd.conf &
 (sleep 3 && emacs --daemon) &
 (sleep 10 && dropboxd) &
 compton &
