@@ -6,19 +6,17 @@
 #manual changes. If I manually add a new bookmark here, I have just to make
 #a new copy of this file and substitute it for ranger's  "bookmarks" file.
 
-E:/etc
-D:/home/lelio/downloads
-M:/media
-e:/home/lelio/documents/ebooks
-d:/home/lelio/documents
-':/home/lelio
-f:/home/lelio/downloads/torrents/finished
-k:/media/VoyagerMini
-m:/home/lelio/music
-l:/home/lelio/documents/ebooks/latex
-q:/home/lelio
 p:/home/lelio/pictures
-s:/home/lelio/documents/2roc
-w:/home/lelio/writings
+t:/tmp
 v:/home/lelio/videos
+w:/home/lelio/writings
 x:/home/lelio/Dropbox/PHARMACISTS
+m:/home/lelio/music
+o:/home/lelio/documents/OnlineCourses
+d:/home/lelio/documents
+e:/home/lelio
+f:/home/lelio/downloads/torrents/finished
+':/home/lelio
+M:/media
+D:/home/lelio/downloads
+E:/etc
