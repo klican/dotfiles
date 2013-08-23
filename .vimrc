@@ -163,10 +163,7 @@ autocmd FileType python nmap <LocalLeader>lv vip<LocalLeader>vs<CR>
 autocmd FileType python map <LocalLeader>lc :VimuxCloseRunner<CR>
 
 " Vim-R-plugin
-let vimrplugin_screenplugin = 0
-let vimrplugin_tmux = 1
 let vimrplugin_notmuxconf = 1
-"let vimrplugin_only_in_tmux = 1
 let vimrplugin_term = "urxvtc"
 let vimrplugin_routmorecolors = 1
    if $DISPLAY != "" "only if X are running
