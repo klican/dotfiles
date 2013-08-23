@@ -1,0 +1,2 @@
+# make R's directory hidden in home directory
+R_LIBS_USER="~/.R/x86_64-unknown-linux-gnu-library/3.0"
