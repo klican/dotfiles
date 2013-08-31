@@ -21,7 +21,6 @@ URxvt*urlLauncher:              firefox
 !URxvt*background:               rgba:0000/0000/0000/aaaa
 
 ! -- xft config -- !
-Xft*dpi: 96
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 Xft.autohint: 0
