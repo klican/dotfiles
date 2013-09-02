@@ -102,6 +102,14 @@ map <leader>nt :NERDTreeToggle<CR>
 "Tagbar
 nmap <Leader>tg :TagbarToggle<CR>
 let g:tagbar_sort = 0
+let g:tagbar_type_r = {
+    \ 'ctagstype' : 'r',
+    \ 'kinds'     : [
+        \ 'f:Functions',
+        \ 'g:GlobalVariables',
+        \ 'v:FunctionVariables',
+    \ ]
+\ }
 
 " delimitMate
 set <BS>=\<C-H>
