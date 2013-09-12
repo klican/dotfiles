@@ -19,6 +19,7 @@ unclutter -grab &
 (sleep 2 && xbindkeys) &
 setxkbmap -layout vok_sk -variant basic -option ctrl:nocaps &
 xset r rate 200 32 &
+xset b off &
 stardict -h &
 #~/bin/touchpad-toggle.sh &
 #twmnd &
